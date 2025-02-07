@@ -216,83 +216,98 @@
   </div>
 </div>
 
-    import React, { useRef } from "react";
-const images = [
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-  "https://via.placeholder.com/300",
-];
+  <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-const ImageSlider = () => {
-  const sliderRef = useRef(null);
+        body {
+            font-family: Arial, sans-serif;
+        }
 
-  const scrollLeft = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -320, behavior: "smooth" });
-    }
-  };
+        .slider-container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
 
-  const scrollRight = () => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: 320, behavior: "smooth" });
-    }
-  };
+        .slider {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
 
-  return (
-    <div className="w-full max-w-4xl mx-auto relative">
-      <button
-        onClick={scrollLeft}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full"
-      >
-        ◀
-      </button>
-      <div
-        ref={sliderRef}
-        className="flex space-x-4 overflow-x-scroll scrollbar-hide scroll-smooth snap-x"
-        style={{ scrollBehavior: "smooth" }}
-      >
-        {images.map((img, index) => (
-          <div key={index} className="flex-shrink-0 w-80 snap-center">
-            <img src={img} alt={`Slide ${index}`} className="w-full rounded-xl" />
-          </div>
-        ))}
-      </div>
-      <button
-        onClick={scrollRight}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2 rounded-full"
-      >
-        ▶
-      </button>
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <button class="nav-btn prev" onclick="scrollLeft()">◀</button>
+        <div class="slider" id="slider">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+            <img src="https://via.placeholder.com/250x150" class="slide">
+        </div>
+        <button class="nav-btn next" onclick="scrollRight()">▶</button>
     </div>
-  );
-};
 
-export default ImageSlider;
+    <script>
+        const slider = document.getElementById("slider");
 
-    import React from "react";
-import ImageSlider from "./ImageSlider";
+        function scrollLeft() {
+            slider.scrollBy({ left: -270, behavior: "smooth" });
+        }
 
-function App() {
-  return (
-    <div className="App">
-      <h1 className="text-center text-2xl font-bold mb-4">My Image Slider</h1>
-      <ImageSlider />
-    </div>
-  );
-}
-
-export default App;
-
+        function scrollRight() {
+            slider.scrollBy({ left: 270, behavior: "smooth" });
+        }
+    </script>
 
 <style>
   .grid-container {
