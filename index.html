@@ -69,13 +69,14 @@
 
 @media screen and (max-width: 768px) {
     .container {
-        width: 100vw; /* กว้างเต็มหน้าจอ */
-        height: 100vh; /* สูงเต็มจอ */
-        margin: 0; /* เอา margin ออกให้เต็มขอบ */
-        border-radius: 0; /* เอาขอบมนออกให้เต็มจอ */
-        padding: 0; /* เอา padding ออกเพื่อไม่ให้ภาพเล็กลง */
-        background-size: cover; /* ปรับให้ภาพเต็มพื้นที่ */
-    }
+    background-size: auto 105%; /* ความกว้างออโต้ ความสูง 105% */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 20px auto;
+    width: 80%;
+    height: 300px; /* ปรับความสูงตามต้องการ */
+    border-radius: 10px;
+}
 }
 
 
