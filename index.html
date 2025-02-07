@@ -27,19 +27,19 @@
         
         @media screen and (max-width: 768px) {
     header {
-        font-size: 18px; /* ปรับขนาดตัวอักษรให้เล็กลง */
+        font-size: 18px;
         }
     }
         
         @media screen and (max-width: 768px) {
     h1 {
-        font-size: 22px; /* ปรับขนาดตัวอักษรให้เล็กลง */
+        font-size: 22px;
         }
     }
 
         @media screen and (max-width: 768px) {
     h2 {
-        font-size: 20px; /* ปรับขนาดตัวอักษรให้เล็กลง */
+        font-size: 20px;
         }
     }
         
@@ -48,12 +48,12 @@
         text-align: center;
         padding: 30px;
         background: url('https://github.com/MVitaClinic/main/blob/main/cover%20m%20vita%20clinic-01.jpg?raw=true') no-repeat center center;
-        background-size: cover; /* ปรับให้รูปเต็มพื้นที่ */
+        background-size: cover;
         margin: 20px auto;
         width: 80%;
         border-radius: 10px;
-        color: #C8A951; /* เปลี่ยนสีตัวอักษรให้เด่นขึ้นถ้ารูปพื้นหลังเข้ม */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กรอบเด่นขึ้น */
+        color: #C8A951;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
         .container, .info {
             text-align: center;
@@ -151,70 +151,63 @@
 <div class="info">
   <h2>4 ปัจจัยสำคัญที่ทำให้เกิดสิว</h2>
   <div class="grid-container">
-    <div class="grid-item">การสะสมของไขมันและเซลล์ผิวที่ตายแล้ว</div>
-    <div class="grid-item">ฮอร์โมนไม่สมดุล</div>
-    <div class="grid-item">การติดเชื้อแบคทีเรีย</div>
-    <div class="grid-item">ปัจจัยสิ่งแวดล้อมและพฤติกรรมการใช้ชีวิต</div>
+    <div class="grid-item">การอุดตันของรูขุมขน</div>
+    <div class="grid-item">การเปลี่ยนแปลงของฮอร์โมน</div>
+    <div class="grid-item">แบคทีเรีย</div>
+    <div class="grid-item">พฤติกรรมและสิ่งแวดล้อม</div>
   </div>
 </div>
 
 <style>
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
-    grid-template-rows: repeat(2, auto); /* แบ่งเป็น 2 แถว */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
     gap: 20px;
     width: 80%;
     max-width: 800px;
     margin: 100px auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้แถบคอลั่ม */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 
   .grid-item {
-    background-color: #fff;
-    border: 2px solid #ffffff; /* เปลี่ยนสีกรอบเป็นสีขาว */
+    background-color: transparent;
+    border: 2px solid #ffffff;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    color: #A67C00; /* เปลี่ยนสีตัวหนังสือ */
-    transform: translateY(30px); /* ทำให้ข้อความอยู่ที่ตำแหน่งที่เลื่อนเข้ามา */
-    opacity: 0; /* ซ่อนไว้ก่อน */
+    font-size: 15px;
+    color: #A67C00;
+    transform: translateY(30px);
+    opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
 
   .grid-item.visible {
-    transform: translateY(0); /* ทำให้ข้อความเลื่อนเข้ามา */
-    opacity: 1; /* ทำให้ข้อความแสดง */
+    transform: translateY(0);
+    opacity: 1;
   }
 
-  /* สำหรับมือถือ (หน้าจอขนาดเล็ก) */
   @media screen and (max-width: 768px) {
     .grid-container {
-      grid-template-columns: 1fr; /* แสดงผลเป็น 1 คอลัมน์ */
+      grid-template-columns: 1fr;
     }
   }
 </style>
 
 <script>
-  // ค้นหาแต่ละ grid-item
   const items = document.querySelectorAll('.grid-item');
-
-  // สร้าง observer เพื่อตรวจสอบการแสดงผลของแต่ละ item
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      // เมื่อ item เข้ามาในหน้าจอ
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
   }, {
-    threshold: 0.3  // เมื่อ 30% ของ element เข้ามาในหน้าจอ
+    threshold: 0.3
   });
-
-  // เริ่มสังเกตแต่ละ item
   items.forEach(item => {
     observer.observe(item);
   });
