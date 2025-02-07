@@ -43,13 +43,13 @@
     h1 {
         font-size: 22px;
         }
-    }
-
-        @media screen and (max-width: 768px) {
-    h2 {
+    
+        h2 {
         font-size: 20px;
         }
-    }
+     }
+
+
 
 .container {
     text-align: center;
@@ -61,7 +61,7 @@
     background-repeat: no-repeat;
     margin: 20px auto;
     width: 100%;
-    height: auto +50px; /* ปรับความสูงตามต้องการ */
+    height: auto;
     border-radius: 10px;
     color: #C8A951;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -123,12 +123,12 @@
             text-decoration: none;
             margin-top: 15px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .button:hover {
             background-color: #A67C00;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อเอาเมาส์ไปวาง */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         /* Responsive Design */
@@ -173,7 +173,7 @@
     </div>
     <div class="grid-item">
       <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B9%81%E0%B8%9A%E0%B8%84%E0%B8%97%E0%B8%B5%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B9%81%E0%B8%9A%E0%B8%84%E0%B8%97%E0%B8%B5%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%20P.%20acnes.png?raw=true" alt="แบคทีเรีย P. acnes">
-      <p>แบคทีเรียแบคทีเรีย P. acnes</p>
+      <p>แบคทีเรีย P. acnes</p>
     </div>
     <div class="grid-item">
       <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%AA%E0%B8%9A.png?raw=true" alt="การอักเสบ">
@@ -240,6 +240,7 @@
     });
   }, {
     threshold: 0.3
+    rootMargin: '50px'
   });
   items.forEach(item => {
     observer.observe(item);
