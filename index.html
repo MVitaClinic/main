@@ -147,6 +147,72 @@
 <div class="info">
     <p>คนที่เป็น <strong>"สิว"</strong> เคยพลาดในการดูแลปัญหาสิวด้วยวิธีที่ไม่ถูกต้องหรือไม่? ไม่ว่าจะเป็นบีบหรือกดสิวเองจนทำให้ผิวหน้าบอบช้ำ ไม่แน่ใจว่าจะเลือกคลินิกรักษาสิวที่ไหนดี กังวลว่าการรักษาจะไม่เห็นผลลัพธ์ที่ชัดเจน รักษาสิวมานานแต่ยังไม่หายขาด ที่ <strong>เอ็มวีต้าคลินิก</strong> เราเข้าใจปัญหาของคุณและพร้อมที่จะช่วยดูแลสิวของคุณอย่างตรงจุด ด้วยประสบการณ์กว่า 16 ปีในการรักษาสิว เราใช้วิธีการรักษาที่ไม่ใช้สารเคมีอันตราย และมุ่งเน้นให้ผิวของคุณแข็งแรงขึ้น เราขอเป็นส่วนหนึ่งในการสร้างความมั่นใจและให้คุณได้สัมผัสกับผิวใสไร้สิว ติดต่อเราเพื่อเริ่มต้นการรักษาสิวที่เอ็มวีต้าคลินิกวันนี้!</p>
 </div>
+
+<div class="info">
+    <h2>4 สาเหตุหลักของการเกิดสิว</h2>
+    <div class="grid-container">
+      <div class="grid-item">การอุดตันของรูขุมขน</div>
+      <div class="grid-item">การเปลี่ยนแปลงของฮอร์โมน</div>
+      <div class="grid-item">แบคทีเรีย</div>
+      <div class="grid-item">พฤติกรรมและสิ่งแวดล้อม</div>
+    </div>
+    <script>
+  const items = document.querySelectorAll('.grid-item');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  items.forEach(item => {
+    observer.observe(item);
+  });
+    </script>
+</div>
+      <style>
+              body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200vh; /* เพื่อให้มีพื้นที่เลื่อน */
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 20px;
+      width: 80%;
+      max-width: 800px;
+      margin: 100px auto;
+    }
+    .grid-item {
+      background-color: #fff;
+      border: 2px solid #a28964;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #a28964;
+      transform: scale(0.8);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .grid-item.visible {
+      transform: scale(1);
+      opacity: 1;
+    }
+      </style>
     
 <div class="info">
     <h2>รักษาทุกปัญหาสิว รอยสิว และหลุมสิว</h2>
@@ -211,7 +277,8 @@
         <div>
             <h3>เอ็มวีต้าคลินิก</h3>
             <p>M Vita Clinic เอ็มวีต้า คลินิก มีใบอนุญาตเลขที่ 10101007357</p>
-            <p>235 ซอย อโศกมนตรี แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110 ไทย โทร: 081-492-2626</p>
+            <p>235 ซอย อโศกมนตรี แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110 ไทย</p>
+            <p>โทร: 081-492-2626</p>
                 <div class="contact-icons">
                     <a href="https://maps.app.goo.gl/pXbHASNzMtkhZM2t5">
                     <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B9%81%E0%B8%9C%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%20M%20Vita%20Clinic.png?raw=true"> 
