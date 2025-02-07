@@ -328,5 +328,70 @@
             <a href="https://www.youtube.com/@MVitaClinicofficial"><img src="https://github.com/MVitaClinic/main/blob/main/Youtube%20M%20Vita%20Clinic.png?raw=true"> M Vita Clinic Official</a>
         </div>
     </div>
+
+    <div class="contact-bar">
+    <a href="tel:0814922626">
+        <img src="https://github.com/MVitaClinic/main/blob/main/Call%20M%20Vita%20Clinic.png?raw=true" alt="โทร">
+        โทร 081-492-2626
+    </a>
+    <a href="https://www.facebook.com/mvitaclinic.thailand/">
+        <img src="https://github.com/MVitaClinic/main/blob/main/Facebook%20M%20Vita%20Clinic.png?raw=true" alt="Facebook">
+        M Vita Clinic
+    </a>
+    <a href="https://page.line.me/mvitaclinic">
+        <img src="https://github.com/MVitaClinic/main/blob/main/Line%20M%20Vita%20Clinic.png?raw=true" alt="LINE">
+        @mvitaclinic
+    </a>
+    </div>
+
+    <style>
+    .contact-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #A67C00; /* สีพื้นหลังของแถบติดต่อ */
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    z-index: 1000; /* ให้แถบอยู่ด้านหน้าของทุกองค์ประกอบ */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-bar a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    }
+
+    .contact-bar img {
+    height: 30px;
+    margin-right: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+    .container {
+        background-size: contain;
+        min-height: 250px;
+    }
+    
+    .contact-bar {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .contact-bar img {
+        height: 25px; /* ลดขนาดไอคอนบนมือถือ */
+    }
+    }
+    </style>
+    
 </body>
 </html>
