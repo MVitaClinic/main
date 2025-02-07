@@ -348,6 +348,7 @@
             cursor: pointer;
             font-size: 20px;
             border-radius: 50%;
+            z-index: 10;
         }
 
         .prev {
@@ -363,11 +364,15 @@
         const slider = document.getElementById("slider");
 
         function scrollLeft() {
-            slider.scrollBy({ left: -270, behavior: "smooth" });
-        }
+    console.log("Before scrollLeft:", slider.scrollLeft);
+    slider.scrollBy({ left: -270, behavior: "smooth" });
+    console.log("After scrollLeft:", slider.scrollLeft);
+}
 
         function scrollRight() {
-            slider.scrollBy({ left: 270, behavior: "smooth" });
+    console.log("Before scrollRight:", slider.scrollLeft);
+    slider.scrollBy({ left: 270, behavior: "smooth" });
+    console.log("After scrollRight:", slider.scrollLeft);
         }
     </script>
     
