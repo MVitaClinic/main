@@ -231,11 +231,11 @@
 </style>
 
 <script>
-  const items = document.querySelectorAll('.grid-item');
-  const observer = new IntersectionObserver(entries => {
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
       }
     });
   }, {
