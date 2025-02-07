@@ -51,17 +51,22 @@
         }
     }
 
-    .container {
-        text-align: center;
-        padding: 30px;
-        background: url('https://github.com/MVitaClinic/main/blob/main/cover%20m%20vita%20clinic-01.jpg?raw=true') no-repeat center center;ฃ
-        background-size: cover; /* ปรับให้รูปเต็มพื้นที่ */
-        margin: 20px auto;
-        width: 80%;
-        border-radius: 10px;
-        color: #C8A951; /* เปลี่ยนสีตัวอักษรให้เด่นขึ้นถ้ารูปพื้นหลังเข้ม */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กรอบเด่นขึ้น */
-    }
+.container {
+    text-align: center;
+    padding: 30px;
+    background: url('https://github.com/MVitaClinic/main/blob/main/cover%20m%20vita%20clinic-01.jpg?raw=true') no-repeat center center;
+    background-size: contain; /* ปรับให้รูปอยู่กึ่งกลางและไม่ถูกตัด */
+    background-position: center center; /* จัดตำแหน่งรูปให้อยู่กึ่งกลาง */
+    background-repeat: no-repeat;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    color: #C8A951;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-height: 400px; /* กำหนดความสูงขั้นต่ำ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
         .container, .info {
