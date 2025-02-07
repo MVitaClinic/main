@@ -157,66 +157,6 @@
     <div class="grid-item">ปัจจัยสิ่งแวดล้อมและพฤติกรรมการใช้ชีวิต</div>
   </div>
 </div>
-
-<script>
-  const items = document.querySelectorAll('.grid-item');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.3
-  });
-
-  items.forEach(item => {
-    observer.observe(item);
-  });
-</script>
-
-    <style>
-    body {
-      margin: 0;
-      font-family: 'Kanit', sans-serif;
-      background-color: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 200vh; /* เพื่อให้มีพื้นที่เลื่อน */
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 200px);
-      gap: 20px;
-      width: 80%;
-      max-width: 800px;
-      margin: 100px auto;
-    }
-
-    .grid-item {
-      background-color: #fff;
-      border: 2px solid #a28964;
-      border-radius: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.5rem;
-      color: #a28964;
-      transform: scale(0.8);
-      opacity: 0;
-      transition: transform 0.5s ease, opacity 0.5s ease;
-    }
-
-    .grid-item.visible {
-      transform: scale(1);
-      opacity: 1;
-    }
-      </style>
     
 <div class="info">
     <h2>รักษาทุกปัญหาสิว รอยสิว และหลุมสิว</h2>
