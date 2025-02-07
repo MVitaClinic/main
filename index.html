@@ -56,7 +56,7 @@
     padding: 30px;
     background: url('https://github.com/MVitaClinic/main/blob/main/cover%20m%20vita%20clinic-01.jpg?raw=true') 
                 no-repeat center center;
-    background-size: auto 105%; /* ความกว้างออโต้ ความสูงเต็ม */
+    background-size: auto 105%; /* ความกว้างออโต้ ความสูง 105% */
     background-position: center;
     background-repeat: no-repeat;
     margin: 20px auto;
@@ -66,6 +66,18 @@
     color: #C8A951;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100vw; /* กว้างเต็มหน้าจอ */
+        height: 100vh; /* สูงเต็มจอ */
+        margin: 0; /* เอา margin ออกให้เต็มขอบ */
+        border-radius: 0; /* เอาขอบมนออกให้เต็มจอ */
+        padding: 0; /* เอา padding ออกเพื่อไม่ให้ภาพเล็กลง */
+        background-size: cover; /* ปรับให้ภาพเต็มพื้นที่ */
+    }
+}
+
 
         .container, .info {
             text-align: center;
