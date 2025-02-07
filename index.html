@@ -140,8 +140,8 @@
                 margin-bottom: 20px;
             }
          }
-        
     </style>
+    
 </head>
 <body>
     <header>
@@ -174,7 +174,6 @@
         </a>
     </div>
 </div>
-
     
 <div class="info">
     <p>คนที่เป็น <strong>"สิว"</strong> เคยพลาดในการดูแลปัญหาสิวด้วยวิธีที่ไม่ถูกต้องหรือไม่? ไม่ว่าจะเป็นบีบหรือกดสิวเองจนทำให้ผิวหน้าบอบช้ำ ไม่แน่ใจว่าจะเลือกคลินิกรักษาสิวที่ไหนดี กังวลว่าการรักษาจะไม่เห็นผลลัพธ์ที่ชัดเจน รักษาสิวมานานแต่ยังไม่หายขาด ที่ <strong>เอ็มวีต้าคลินิก</strong> เราเข้าใจปัญหาของคุณและพร้อมที่จะช่วยดูแลสิวของคุณอย่างตรงจุด ด้วยประสบการณ์กว่า 16 ปีในการรักษาสิว เราใช้วิธีการรักษาที่ไม่ใช้สารเคมีอันตราย และมุ่งเน้นให้ผิวของคุณแข็งแรงขึ้น เราขอเป็นส่วนหนึ่งในการสร้างความมั่นใจและให้คุณได้สัมผัสกับผิวใสไร้สิว ติดต่อเราเพื่อเริ่มต้นการรักษาสิวที่เอ็มวีต้าคลินิก วันนี้!</p>
@@ -215,134 +214,7 @@
     </div>
   </div>
 </div>
-
-  <style>
-        * { box-sizing:
-            border-box;
-            margin: 0;
-            padding: 0;
-        }
-        .slider-container {
-            position: relative;
-            max-width: 800px;
-            margin: 40px auto;
-            overflow: hidden;
-        }
-      
-        .slider {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-        }
-
-        .slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .slide {
-            flex: 0 0 auto;
-            width: 250px;
-            height: 150px;
-            border-radius: 10px;
-        }
-
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-    </style>
-
     
-<div class="info">
-    <div class="carousel-container">
-        <button class="nav-btn prev" onclick="scrollLeft()">◀</button>
-        <div class="carousel-wrapper">
-            <div class="carousel">
-                <img src="https://via.placeholder.com/150/FF5733/ffffff?text=1" alt="Image 1">
-                <img src="https://via.placeholder.com/150/33FF57/ffffff?text=2" alt="Image 2">
-                <img src="https://via.placeholder.com/150/3357FF/ffffff?text=3" alt="Image 3">
-                <img src="https://via.placeholder.com/150/FF33A1/ffffff?text=4" alt="Image 4">
-                <img src="https://via.placeholder.com/150/A1FF33/ffffff?text=5" alt="Image 5">
-            </div>
-        </div>
-        <button class="nav-btn next" onclick="scrollRight()">▶</button>
-    </div>
-</div>
-
-      <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .carousel-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
-        }
-
-        .nav-btn {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #A67C00;
-        }
-
-        .carousel-wrapper {
-            overflow: hidden;
-            width: 320px; /* ปรับขนาดตามต้องการ */
-        }
-
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            white-space: nowrap;
-        }
-
-        .carousel img {
-            width: 150px;
-            height: auto;
-            margin-right: 10px;
-            border-radius: 10px;
-        }
-    </style>
-    
-    <script>
-        const carousel = document.querySelector(".carousel");
-        const scrollAmount = 160; // ระยะที่เลื่อน (pixel)
-
-        function scrollLeft() {
-            carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        }
-
-        function scrollRight() {
-            carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        }
-    </script>
-
 <style>
   .grid-container {
     text-align: center;
@@ -405,6 +277,88 @@
     observer.observe(item);
   });
 </script>
+
+    <div class="info">
+    <div class="carousel-container">
+        <button class="nav-btn prev" onclick="scrollLeft()">◀</button>
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <img src="https://via.placeholder.com/150/FF5733/ffffff?text=1" alt="Image 1">
+                <img src="https://via.placeholder.com/150/33FF57/ffffff?text=2" alt="Image 2">
+                <img src="https://via.placeholder.com/150/3357FF/ffffff?text=3" alt="Image 3">
+                <img src="https://via.placeholder.com/150/FF33A1/ffffff?text=4" alt="Image 4">
+                <img src="https://via.placeholder.com/150/A1FF33/ffffff?text=5" alt="Image 5">
+            </div>
+        </div>
+        <button class="nav-btn next" onclick="scrollRight()">▶</button>
+    </div>
+</div>
+      <style>
+        * { box-sizing:
+            border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .slider-container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+      
+        .slider {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slide {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+    
+    <script>
+        const carousel = document.querySelector(".carousel");
+        const scrollAmount = 160; // ระยะที่เลื่อน (pixel)
+
+        function scrollLeft() {
+            carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
+
+        function scrollRight() {
+            carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+    </script>
 
     
 <div class="info">
