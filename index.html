@@ -270,7 +270,8 @@
         }
     </style>
 
-
+    
+<div class="info">
     <div class="carousel-container">
         <button class="nav-btn prev" onclick="scrollLeft()">◀</button>
         <div class="carousel-wrapper">
@@ -284,7 +285,51 @@
         </div>
         <button class="nav-btn next" onclick="scrollRight()">▶</button>
     </div>
+</div>
 
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #A67C00;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            width: 320px; /* ปรับขนาดตามต้องการ */
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+        }
+
+        .carousel img {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+    </style>
+    
     <script>
         const carousel = document.querySelector(".carousel");
         const scrollAmount = 160; // ระยะที่เลื่อน (pixel)
