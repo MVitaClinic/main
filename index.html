@@ -280,85 +280,97 @@
 
 <div class="info">
     <div class="slider-container">
-        <span style="color: #A67C00;"><button class="nav-btn prev" onclick="scrollLeft()">◀</button></span>
-        <div class="slider" id="slider">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
+        <button class="nav-btn prev" onclick="scrollLeft()">◀</button>
+        <div class="slider-wrapper">
+            <div class="slider" id="slider">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+                <img src="https://via.placeholder.com/250x150" class="slide">
+            </div>
         </div>
-        <span style="color: #A67C00;"><button class="nav-btn next" onclick="scrollRight()">▶</button></span>
+        <button class="nav-btn next" onclick="scrollRight()">▶</button>
     </div>
 </div>
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        .slider-container {
-            position: relative;
-            max-width: 800px;
-            margin: 40px auto;
-            overflow: hidden;
-        }
+    .slider-container {
+        position: relative;
+        max-width: 800px;
+        margin: 40px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .slider {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-        }
+    .slider-wrapper {
+        overflow: hidden;
+        width: 700px; /* กำหนดขนาดให้เหมาะสม */
+    }
 
-        .slider::-webkit-scrollbar {
-            display: none;
-        }
+    .slider {
+        display: flex;
+        gap: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
 
-        .slide {
-            flex: 0 0 auto;
-            width: 250px;
-            height: 150px;
-            border-radius: 10px;
-        }
+    .slide {
+        width: 250px;
+        height: 150px;
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
 
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-            z-index: 10;
-        }
+    .nav-btn {
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 50%;
+        z-index: 10;
+    }
 
-        .prev {
-            left: 10px;
-        }
+    .prev {
+        margin-right: 10px;
+    }
 
-        .next {
-            right: 10px;
-        }
-    </style>
+    .next {
+        margin-left: 10px;
+    }
+</style>
+
+<script>
+    const slider = document.getElementById("slider");
+    let scrollAmount = 0;
+    const step = 270;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+    function scrollLeft() {
+        scrollAmount -= step;
+        if (scrollAmount < 0) scrollAmount = 0;
+        slider.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+
+    function scrollRight() {
+        scrollAmount += step;
+        if (scrollAmount > maxScroll) scrollAmount = maxScroll;
+        slider.style.transform = `translateX(-${scrollAmount}px)`;
+    }
+</script>
+
     
     <script>
         const slider = document.getElementById("slider");
