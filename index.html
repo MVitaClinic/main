@@ -270,37 +270,31 @@
         }
     </style>
 
-    <div class="info">
-    <div class="slider-container">
-        <span style="color: #A67C00;"><button class="nav-btn prev" onclick="scrollLeft()">◀</button></span>
-        <div class="slider" id="slider">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
-            <img src="https://via.placeholder.com/250x150" class="slide">
+
+    <div class="carousel-container">
+        <button class="nav-btn prev" onclick="scrollLeft()">◀</button>
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <img src="https://via.placeholder.com/150/FF5733/ffffff?text=1" alt="Image 1">
+                <img src="https://via.placeholder.com/150/33FF57/ffffff?text=2" alt="Image 2">
+                <img src="https://via.placeholder.com/150/3357FF/ffffff?text=3" alt="Image 3">
+                <img src="https://via.placeholder.com/150/FF33A1/ffffff?text=4" alt="Image 4">
+                <img src="https://via.placeholder.com/150/A1FF33/ffffff?text=5" alt="Image 5">
+            </div>
         </div>
-        <span style="color: #A67C00;"><button class="nav-btn next" onclick="scrollRight()">▶</button></span>
-    </div>
+        <button class="nav-btn next" onclick="scrollRight()">▶</button>
     </div>
 
     <script>
-        const slider = document.getElementById("slider");
+        const carousel = document.querySelector(".carousel");
+        const scrollAmount = 160; // ระยะที่เลื่อน (pixel)
 
         function scrollLeft() {
-            slider.scrollBy({ left: -270, behavior: "smooth" });
+            carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
         }
 
         function scrollRight() {
-            slider.scrollBy({ left: 270, behavior: "smooth" });
+            carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
         }
     </script>
 
