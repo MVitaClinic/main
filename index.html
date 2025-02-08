@@ -404,16 +404,11 @@
 <script>
     let currentIndex = 0;
 
-    function moveSlide(direction) {
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        
-        currentIndex += direction;
+            slider.scrollBy({ left: -270, behavior: "smooth" });
+        }
 
-        if (currentIndex < 0) {
-            currentIndex = totalSlides - 3;  // หมุนกลับจากภาพสุดท้าย
-        } else if (currentIndex >= totalSlides) {
-            currentIndex = 0;  // หมุนกลับจากภาพแรก
+        function scrollRight() {
+            slider.scrollBy({ left: 270, behavior: "smooth" });
         }
 
         document.getElementById('slider').style.transform = `translateX(-${(currentIndex * 33.33)}%)`;
