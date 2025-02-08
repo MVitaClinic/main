@@ -330,96 +330,104 @@
               }
               </style>
 <div class="info">
-<div class="slider-container">
-    <div class="slider" id="slider">
-        <!-- 9 ภาพที่ใช้แสดง -->
-        <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
-        <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
-        <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
-        <div class="slide"><img src="image4.jpg" alt="Image 4"></div>
-        <div class="slide"><img src="image5.jpg" alt="Image 5"></div>
-        <div class="slide"><img src="image6.jpg" alt="Image 6"></div>
-        <div class="slide"><img src="image7.jpg" alt="Image 7"></div>
-        <div class="slide"><img src="image8.jpg" alt="Image 8"></div>
-        <div class="slide"><img src="image9.jpg" alt="Image 9"></div>
-    </div>
-    <div class="slider-navigation">
-        <button class="prev" onclick="scrollLeft()">⬅</button>
-        <button class="next" onclick="scrollRight()">⮕</button>
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="slide"><img src="image8.jpg" alt="Image 8"></div> <!-- Clone Before last -->
+            <div class="slide"><img src="image9.jpg" alt="Image 9"></div> <!-- Clone last -->
+            <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="image4.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="image5.jpg" alt="Image 5"></div>
+            <div class="slide"><img src="image6.jpg" alt="Image 6"></div>
+            <div class="slide"><img src="image7.jpg" alt="Image 7"></div>
+            <div class="slide"><img src="image8.jpg" alt="Image 8"></div>
+            <div class="slide"><img src="image9.jpg" alt="Image 9"></div>
+            <div class="slide"><img src="image1.jpg" alt="Image 1"></div> <!-- Clone first -->
+            <div class="slide"><img src="image2.jpg" alt="Image 2"></div> <!-- Clone second -->
+        </div>
+        <div class="slider-navigation">
+            <button class="prev" onclick="moveSlide(-1)">⬅</button>
+            <button class="next" onclick="moveSlide(1)">⮕</button>
+        </div>
     </div>
 </div>
-</div>
-    
-  <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .slider-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .slide {
-            min-width: 33.33%; /* แสดง 3 ภาพต่อหน้า */
-            box-sizing: border-box;
-        }
-        .slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .slider-navigation {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .prev, .next {
-            background-color: #A67C00;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border: none;
-            font-size: 24px;
-            border-radius: 50%;  /* ทำให้ปุ่มเป็นวงกลม */
-            width: 50px;  /* กำหนดขนาดปุ่ม */
-            height: 50px; /* กำหนดขนาดปุ่ม */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+
+<style>
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    .slider {
+        display: flex;
+        transition: transform 0.4s ease-out;
+    }
+    .slide {
+        min-width: 33.33%;
+        box-sizing: border-box;
+    }
+    .slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .slider-navigation {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+    .prev, .next {
+        background-color: #A67C00;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        font-size: 24px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
 <script>
-    let currentIndex = 0;
-
+    let currentIndex = 2;
+    const slider = document.getElementById('slider');
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const slideWidth = 33.33; // %
+    
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+    
     function moveSlide(direction) {
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
         currentIndex += direction;
-
-        // เลื่อนจากรูปสุดท้ายไปที่รูปแรก (วนลูป)
-        if (currentIndex < 0) {
-            currentIndex = totalSlides - 3;  // กำหนดให้กลับไปที่ภาพที่ 3 จากสุดท้าย
-        } else if (currentIndex >= 9) {
-            currentIndex = 0;  // ไปที่ภาพแรก
-        }
-
-        document.getElementById('slider').style.transform = `translateX(-${(currentIndex * 33.33)}%)`;
+        slider.style.transition = "transform 0.4s ease-out";
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
     }
+
+    slider.addEventListener("transitionend", () => {
+        if (currentIndex <= 0) {
+            slider.style.transition = "none";
+            currentIndex = totalSlides - 4;
+            requestAnimationFrame(() => {
+                slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+            });
+        } else if (currentIndex >= totalSlides - 2) {
+            slider.style.transition = "none";
+            currentIndex = 2;
+            requestAnimationFrame(() => {
+                slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+            });
+        }
+    });
 </script>
+
     
     <div class="info">
         <h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้า คลินิก</h2>
