@@ -404,11 +404,17 @@
 <script>
     let currentIndex = 0;
 
-            slider.scrollBy({ left: -270, behavior: "smooth" });
-        }
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-        function scrollRight() {
-            slider.scrollBy({ left: 270, behavior: "smooth" });
+        currentIndex += direction;
+
+        // เลื่อนจากรูปสุดท้ายไปที่รูปแรก (วนลูป)
+        if (currentIndex < 0) {
+            currentIndex = totalSlides - 3;  // กำหนดให้กลับไปที่ภาพที่ 3 จากสุดท้าย
+        } else if (currentIndex >= 9) {
+            currentIndex = 0;  // ไปที่ภาพแรก
         }
 
         document.getElementById('slider').style.transform = `translateX(-${(currentIndex * 33.33)}%)`;
