@@ -344,8 +344,8 @@
         <div class="slide"><img src="image9.jpg" alt="Image 9"></div>
     </div>
     <div class="slider-navigation">
-        <button class="prev" onclick="moveSlide(-1)">❮</button>
-        <button class="next" onclick="moveSlide(1)">❯</button>
+        <button class="prev" onclick="moveSlide(-1)">⬅</button>
+        <button class="next" onclick="moveSlide(1)">⮕</button>
     </div>
 </div>
 </div>
@@ -386,12 +386,18 @@
             transform: translateY(-50%);
         }
         .prev, .next {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: #A67C00;
             color: white;
             padding: 10px;
             cursor: pointer;
             border: none;
             font-size: 24px;
+            border-radius: 50%;  /* ทำให้ปุ่มเป็นวงกลม */
+            width: 50px;  /* กำหนดขนาดปุ่ม */
+            height: 50px; /* กำหนดขนาดปุ่ม */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 
