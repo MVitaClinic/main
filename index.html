@@ -19,10 +19,7 @@ body {
     background-attachment: fixed; /* เพิ่มบรรทัดนี้ */
     color: #C8A951;
 }
-    .info p {
-        word-wrap: break-word; /* ใช้สำหรับการหักคำโดยไม่ให้คำถูกตัดกลางคำ */
-        white-space: pre-wrap; /* เพื่อให้ข้อความยืดหยุ่นและพอดีกับหน้าจอ */
-    }
+    
 
         header {
             background-color: rgba(255, 255, 255, 0.8);
@@ -266,7 +263,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 15px;
-    color: #D4AF37;
+    color: #C8A951;
     transform: translateY(30px);
     opacity: 0;
     transition: transform 1.5s ease, opacity 1.5s ease;
@@ -501,10 +498,12 @@ body {
         justify-content: center;
         align-items: center;
         font-size: 15px;
-        color: #D4AF37;
+        color: #C8A951;
         transform: translateY(30px);
         opacity: 0;
         transition: transform 1.5s ease, opacity 1.5s ease;
+        word-break: break-word; /* ป้องกันการตัดคำกลางคำ */
+        word-wrap: break-word;
     }
 
     .four-column-item img {
