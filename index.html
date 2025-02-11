@@ -489,7 +489,7 @@ body {
 <style>
     .four-column-container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 คอลัมน์ */
+        grid-template-columns: repeat(4, 1fr);
         grid-gap: 10px;
         padding: 10px;
     }
@@ -524,27 +524,23 @@ body {
 
     @media (max-width: 768px) {
         .four-column-container {
-            grid-template-columns: repeat(2, 1fr); /* 2 คอลัมน์สำหรับมือถือ */
+            grid-template-columns: repeat(2, 1fr);
         }
     }
     </style>
 
     <script>
-    // ฟังก์ชันที่ตรวจสอบตำแหน่งของแต่ละ item ในหน้าจอ
     function checkVisibility() {
         const items = document.querySelectorAll('.grid-item');
         items.forEach(item => {
             const rect = item.getBoundingClientRect();
-            // ตรวจสอบว่า item อยู่ในตำแหน่งที่มองเห็นในหน้าจอ
             if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                item.classList.add('visible'); // แสดง item ด้วยแอนิเมชัน
+                item.classList.add('visible');
             }
         });
     }
 
-    // เรียกใช้งานฟังก์ชันตรวจสอบการเลื่อนเมื่อมีการเลื่อนหน้าจอ
     window.addEventListener('scroll', checkVisibility);
-    // เรียกใช้ฟังก์ชันเมื่อโหลดหน้าเว็บ
     window.addEventListener('load', checkVisibility);
     </script>
     
