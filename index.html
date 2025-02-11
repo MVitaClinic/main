@@ -18,9 +18,11 @@ body {
     background-position: center center;
     background-attachment: fixed; /* เพิ่มบรรทัดนี้ */
     color: #C8A951;
-    word-wrap: break-word; /* สำหรับไม่ให้คำขาดกลางคำ */
-    word-break: break-word
 }
+    .info p {
+        word-wrap: break-word; /* ใช้สำหรับการหักคำโดยไม่ให้คำถูกตัดกลางคำ */
+        white-space: pre-wrap; /* เพื่อให้ข้อความยืดหยุ่นและพอดีกับหน้าจอ */
+    }
 
         header {
             background-color: rgba(255, 255, 255, 0.8);
