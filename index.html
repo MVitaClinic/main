@@ -6,6 +6,7 @@
     <title>เอ็มวีต้าคลินิก คลินิกรักษาสิว เลเซอร์รอยสิว</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://github.com/MVitaClinic/main/blob/main/Logo%20MVitaClinic.png?raw=true" type="image/png">
+    <meta name="description" content="เอ็มวีต้าคลินิก คลินิกรักษาสิวด้วยประสบการณ์กว่า 16 ปี มุ่งเน้นการดูแลผิวอย่างตรงจุด เห็นผลลัพธ์ใน 2 เดือน!">
     <style>
         body {
             font-family: 'Kanit', sans-serif;
@@ -16,12 +17,13 @@
             color: #C8A951;
         } 
 
-        @media (max-width: 200px) {
+@media (max-width: 768px) {
     body {
         background: url('https://github.com/MVitaClinic/main/blob/main/BG%20MVitaClinic%20Mobile.png?raw=true') no-repeat center center fixed;
-        background-size: cover;  /* ปรับภาพให้ครอบคลุมหน้าจอมือถือ */
+        background-size: cover;
     }
 }
+
         
         header {
             background-color: rgba(255, 255, 255, 0.8);
@@ -66,13 +68,19 @@
     background-position: center;
     background-repeat: no-repeat;
     margin: 20px auto;
-    width: 105%;
+    width: 100%;
+    max-width: 1200px;
     height: auto;
     border-radius: 10px;
     color: #C8A951;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    }
 
+        .button:hover {
+    background-color: #8c734d;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
         .container, .info {
             text-align: center;
             padding: 30px;
@@ -241,7 +249,7 @@
   .grid-container {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-template-rows: repeat(2, auto);
     gap: 20px;
     width: 80%;
