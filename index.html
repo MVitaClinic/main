@@ -20,7 +20,9 @@
 @media (max-width: 768px) {
     body {
         background: url('https://github.com/MVitaClinic/main/blob/main/BG%20MVitaClinic%20Mobile.png?raw=true') no-repeat center center fixed;
-        background-size: cover;
+        background-size: contain; /* เปลี่ยนจาก cover เป็น contain เพื่อให้รูปไม่ถูกตัด */
+        background-attachment: scroll; /* ป้องกันการค้างของรูปเมื่อเลื่อนหน้า */
+        background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
     }
 }
 
