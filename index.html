@@ -546,12 +546,13 @@ body {
     </div>
     </div>
     
-    <style>
+<style>
 .four-column-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ใช้ auto-fit และ minmax เพื่อให้ขนาดคอลัมน์ยืดหยุ่น */
     grid-template-rows: repeat(2, auto); /* 2 แถว */
-    gap: 10px; /* เพิ่มระยะห่างให้มากขึ้น */
+    gap: 10px; /* ระยะห่างระหว่างคอลัมน์และแถว */
+    grid-row-gap: 5px; /* ระยะห่างระหว่างแถว */
     padding: 20px;
     width: 80%;
     max-width: 900px;
@@ -610,7 +611,7 @@ body {
         grid-template-columns: repeat(2, minmax(200px, 1fr)); /* สำหรับหน้าจอเล็กกว่านี้ เช่น มือถือ */
     }
 }
-    </style>
+</style>
 
     <script>
     function checkVisibility() {
