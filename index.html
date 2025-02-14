@@ -524,7 +524,7 @@ body {
 </div>
 <div class="four-column-item grid-item">
     <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B9%80%E0%B8%97%E0%B8%84%E0%B9%82%E0%B8%99%E0%B9%82%E0%B8%A5%E0%B8%A2%E0%B8%B5%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%A2.jpg?raw=true" alt="มีเทคโนโลยีทันสมัย">
-    <p><span class="checkmark">✓</span><br><br><span style="color: #A67C00;"><strong>เทคโนโลยีและนวัตกรรมทันสมัย</strong></span><br>ใช้อุปกรณ์มาตรฐานสากล ปลอดภัย มีประสิทธิภาพ
+    <p><span class="checkmark">✓</span><br><br><span style="color: #A67C00;"><strong>มีเทคโนโลยีที่ทันสมัย</strong></span><br>ใช้อุปกรณ์มาตรฐานสากล ปลอดภัย มีประสิทธิภาพ
 </div>
 <div class="four-column-item grid-item">
     <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A7%E0%B8%B4%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%AB%E0%B9%8C%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%94.jpg?raw=true" alt="การวิเคราะห์ผิวที่ละเอียด">
@@ -551,8 +551,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ใช้ auto-fit และ minmax เพื่อให้ขนาดคอลัมน์ยืดหยุ่น */
     grid-template-rows: repeat(2, auto); /* 2 แถว */
-    gap: 10px; /* ระยะห่างระหว่างคอลัมน์และแถว */
-    grid-row-gap: 5px; /* ระยะห่างระหว่างแถว */
+    gap: 5px; /* ระยะห่างระหว่างคอลัมน์และแถว */
     padding: 20px;
     width: 80%;
     max-width: 900px;
@@ -577,7 +576,11 @@ body {
     transform: translateY(30px);
     opacity: 0;
     transition: transform 1.5s ease, opacity 1.5s ease;
-    padding: 0 15px 10px 15px; /* บน 0, ซ้าย 15px, ล่าง 10px, ขวา 15px */
+    padding: 15px 15px 10px 15px; /* ขอบบน 15px, ซ้ายขวาล่าง 15px, ล่าง 10px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* จัดให้มีระยะห่างเท่ากันระหว่างเนื้อหาทั้งหมด */
+    height: 100%; /* ทำให้กรอบแต่ละคอลัมน์มีความสูงเต็มที่ */
 }
 
 .four-column-item img {
