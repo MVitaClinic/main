@@ -519,7 +519,7 @@ body {
     <div class="four-column-container">
 <div class="four-column-item grid-item">
     <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B9%81%E0%B8%9E%E0%B8%97%E0%B8%A2%E0%B9%8C%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%8A%E0%B8%B2%E0%B8%8D.jpg?raw=true" alt="แพทย์ผู้เชี่ยวชาญ">
-    <p><span class="checkmark">✔</span><br><span style="color: #A67C00;"><strong>แพทย์ผู้เชี่ยวชาญ</strong></span><br>ดูแลโดยแพทย์เฉพาะทาง ให้คำแนะนำและรักษาอย่างเหมาะสม
+    <p><span class="checkmark">✓</span><br><br><span style="color: #A67C00;"><strong>แพทย์ผู้เชี่ยวชาญ</strong></span><br>ดูแลโดยแพทย์เฉพาะทาง ให้คำแนะนำและรักษาอย่างเหมาะสม
 </div>
 <div class="four-column-item grid-item">
     <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B9%80%E0%B8%97%E0%B8%84%E0%B9%82%E0%B8%99%E0%B9%82%E0%B8%A5%E0%B8%A2%E0%B8%B5%E0%B8%97%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%A1%E0%B8%B1%E0%B8%A2.jpg?raw=true" alt="มีเทคโนโลยีทันสมัย">
@@ -544,66 +544,62 @@ body {
     </div>
     </div>
     
-    <style>
-        .four-column-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
-            grid-template-rows: repeat(2, auto); /* 2 แถว */
-            gap: 20px; /* เพิ่มระยะห่างให้มากขึ้น */
-            padding: 20px;
-            width: 80%;
-            max-width: 900px;
-            margin: 20px auto;
-            text-align: center;
-    }
+    .four-column-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ */
+    grid-template-rows: repeat(2, auto); /* 2 แถว */
+    gap: 20px; /* เพิ่มระยะห่างให้มากขึ้น */
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
 
-        .four-column-item {
-            background-color: transparent;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 15px;
-            color: #C8A951;
-            transform: translateY(30px);
-            opacity: 0;
-            transition: transform 1.5s ease, opacity 1.5s ease;
-            word-break: break-word;
-            word-wrap: break-word;
-            padding: 0 15px 15px 15px; /* บน 0, ซ้าย 15px, ล่าง 15px, ขวา 15px */
-    }
+.four-column-item {
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #C8A951;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1.5s ease;
+    word-break: break-word;
+    word-wrap: break-word;
+    padding: 0 15px 10px 15px; /* บน 0, ซ้าย 15px, ล่าง 10px, ขวา 15px */
+}
 
-    }
+.four-column-item img {
+    width: calc(100% - 30px); /* ลดขนาดลง 30px (ซ้าย 15px + ขวา 15px) */
+    height: auto; /* คงอัตราส่วนของรูป */
+    max-width: 100%; /* ป้องกันรูปใหญ่เกินไป */
+    margin-bottom: 5px; /* เว้นระยะห่างจากข้อความ 5px */
+    border-radius: 15px;
+}
 
-       .four-column-item img {
-            width: calc(100% - 30px); /* ลดขนาดลง 30px (ซ้าย 15px + ขวา 15px) */
-            height: auto; /* คงอัตราส่วนของรูป */
-            max-width: 100%; /* ป้องกันรูปใหญ่เกินไป */
-            margin: 15px; /* เว้นระยะห่างจากขอบทุกด้าน */
-            border-radius: 15px;
-    }
+.four-column-item.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
 
-    }
-
-        .four-column-item.visible {
-            transform: translateY(0);
-            opacity: 1;
-    }
-       .checkmark {
-            display: inline-block;
-            background-color: green;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-    } 
+.checkmark {
+    display: inline-block;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}
 
     @media (max-width: 768px) {
         .four-column-container {
