@@ -317,48 +317,77 @@ body {
 </div>
     
 <style>
-  .grid-container {
-    text-align: center;
+.four-column-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(2, auto);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ใช้ auto-fit และ minmax เพื่อให้ขนาดคอลัมน์ยืดหยุ่น */
+    grid-template-rows: repeat(2, auto); /* 2 แถว */
+    gap: 5px; /* ระยะห่างระหว่างคอลัมน์และแถว */
+    padding: 20px;
     width: 80%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
-  }
+    text-align: center;
+    justify-content: center; /* จัดแนวนอนให้กึ่งกลาง */
+    align-items: center; /* จัดแนวตั้งให้กึ่งกลาง */
+    min-height: 100vh; /* ทำให้กริดเต็มความสูงของหน้าจอ */
+}
 
-  .grid-item {
+.four-column-item {
     background-color: transparent;
     border: none;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* เริ่มต้นเนื้อหาจากด้านบน */
+    align-items: center; /* จัดแนวตามแกนขวาง */
     font-size: 15px;
     color: #C8A951;
     transform: translateY(30px);
     opacity: 0;
     transition: transform 1.5s ease, opacity 1.5s ease;
-  }
-    
-  .grid-item img {
-    width: auto;
-    height: 80px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-  }
-    
-  .grid-item.visible {
+    padding: 15px 15px 10px 15px; /* ขอบบน 15px, ซ้ายขวาล่าง 15px, ล่าง 10px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* จัดให้มีระยะห่างเท่ากันระหว่างเนื้อหาทั้งหมด */
+    height: 100%; /* ทำให้กรอบแต่ละคอลัมน์มีความสูงเต็มที่ */
+}
+
+.four-column-item img {
+    width: calc(100% - 30px); /* ลดขนาดลง 30px (ซ้าย 15px + ขวา 15px) */
+    height: auto; /* คงอัตราส่วนของรูป */
+    max-width: 100%; /* ป้องกันรูปใหญ่เกินไป */
+    margin-bottom: 10px; /* เพิ่มระยะห่างจากรูปถึงข้อความ 10px */
+    border-radius: 15px;
+}
+
+.four-column-item.visible {
     transform: translateY(0);
     opacity: 1;
-  }
+}
 
-  @media screen and (max-width: 768px) {
-    .grid-container {
-      grid-template-columns: 1fr;
+.checkmark {
+    display: inline-block;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .four-column-container {
+        grid-template-columns: repeat(2, minmax(200px, 1fr)); /* สำหรับหน้าจอเล็กกว่านี้ เช่น มือถือ */
+    }
+}
+
+.four-column-container > .four-column-item:nth-child(4n+1) {
+    margin-bottom: 20px; /* เพิ่มระยะห่าง 20px จากขอบล่างของแถวแรกถึงแถวสอง */
+}
 </style>
 
 <script>
