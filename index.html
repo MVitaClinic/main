@@ -573,15 +573,19 @@ body {
             transition: transform 1.5s ease, opacity 1.5s ease;
             word-break: break-word;
             word-wrap: break-word;
+            padding: 0 15px 15px 15px; /* บน 0, ซ้าย 15px, ล่าง 15px, ขวา 15px */
     }
 
-        .four-column-item img {
-            width: auto;
-            max-width: 100px; /* จำกัดขนาดรูปภาพให้สมดุลกับคอลัมน์ */
-            height: 80px;
-            margin-top: 15px;
-            margin-bottom: 5px;
+    }
+
+       .four-column-item img {
+            width: calc(100% - 30px); /* ลดขนาดลง 30px (ซ้าย 15px + ขวา 15px) */
+            height: auto; /* คงอัตราส่วนของรูป */
+            max-width: 100%; /* ป้องกันรูปใหญ่เกินไป */
+            margin: 15px; /* เว้นระยะห่างจากขอบทุกด้าน */
             border-radius: 15px;
+    }
+
     }
 
         .four-column-item.visible {
