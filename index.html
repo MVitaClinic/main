@@ -598,6 +598,12 @@ body {
     .four-column-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .four-column-item img {
+        width: 100%;  /* ทำให้รูปขยายเต็มคอลัมน์ */
+        max-width: 100%; /* ป้องกันไม่ให้รูปใหญ่เกินไป */
+        height: auto; /* คงอัตราส่วนเดิม */
+    }
 }
 </style>
 
