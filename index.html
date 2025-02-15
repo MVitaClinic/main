@@ -639,34 +639,30 @@
     </div>
     </div>
 
-      <style>
-   .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* เพิ่มระยะห่างระหว่างแต่ละ item */
-        justify-content: space-between;
-    }
+   <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* ให้สามารถเว้นแถวได้ */
+            justify-content: center; /* จัดคอลัมน์ให้อยู่กลาง */
+            gap: 20px;
+            padding: 20px;
+        }
+        .item {
+            width: 40%; /* กำหนดความกว้างคอลัมน์ 40% */
+            text-align: center;
+            border-radius: 10%; /* รูปภาพโค้งมน 10% */
+            background-color: transparent;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-    .item {
-        width: calc(50% - 10px); /* ปรับให้แต่ละ item มีขนาดพอดี */
-        box-sizing: border-box;
-        background-color: transparent;
-        border: none;
-        border-radius: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        height: auto; /* ปรับให้ความสูงยืดหยุ่นตามเนื้อหา */
-        min-height: 200px; /* กำหนดความสูงขั้นต่ำ */
-    }
-
+        }
+        .item img {
+            width: 100%; /* ให้ภาพขยายเต็มคอลัมน์ */
+            border-radius: 10%; /* ทำให้ภาพโค้งมน 10% */
+        }
     .Number {
         display: inline-block;
-        background-color: green;
+        background-color: #5f3813;
         color: white;
         font-size: 20px;
         font-weight: bold;
@@ -675,31 +671,9 @@
         text-align: center;
         line-height: 30px;
         border-radius: 50%;
-        margin-bottom: 10px; /* เพิ่มระยะห่างระหว่างหมายเลขและข้อความ */
-        margin-top: 10px;
+        margin-bottom: 5px; /* เพิ่มระยะห่างระหว่างหมายเลขและข้อความ */
+        margin-top: 5px;
     }
-
-    .item img {
-        max-width: 50%;
-        height: auto;
-        border-radius: 10px; /* ทำมุมของรูปภาพให้โค้งมน */
-        object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่ได้ดี */
-    }
-
-        p {
-            margin-top: 10px;
-        }
-
-    @media screen and (max-width: 768px) {
-    .item img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px; /* ทำมุมของรูปภาพให้โค้งมน */
-        object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่ได้ดี */
-    }
-    }
-    </style>
-  
     
     <div class="info">
         <h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้า คลินิก</h2>
