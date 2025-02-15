@@ -575,14 +575,12 @@
 
         <style>
         .features-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* กำหนดเป็น 3 คอลัมน์ */
-    gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
-    padding: 20px;
-    text-align: center;
-    }
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
 
         .feature-item {
+    width: calc(33% - 10px); /* 50% ของคอลัมน์ + ระยะห่าง */
     background-color: transparent;
     border: none;
     border-radius: 20px;
