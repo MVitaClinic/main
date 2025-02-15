@@ -592,8 +592,16 @@ body {
     font-size: 15px;
     color: #C8A951;
     padding: 15px;
+    opacity: 0; /* ตั้งค่าเริ่มต้นให้หายไป */
+    transform: translateY(50px); /* ย้ายตำแหน่งให้หายไป */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* เพิ่มการเปลี่ยนแปลง */
 }
-
+    
+.feature-item.visible {
+    opacity: 1; /* เมื่อแสดงจะมีความโปร่งใส */
+    transform: translateY(0); /* ย้ายกลับตำแหน่งเดิม */
+}
+    
 .feature-item img {
     width: 100%;
     height: auto;
@@ -628,18 +636,21 @@ body {
 </style>
 
     <script>
-    function checkVisibility() {
-        const items = document.querySelectorAll('.feature-item');
-        items.forEach(item => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-                item.classList.add('visible');
-            }
-        });
-    }
+function checkVisibility() {
+    const items = document.querySelectorAll('.feature-item');
+    items.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+            item.classList.add('visible');
+        } else {
+            item.classList.remove('visible'); // ถ้าไม่ได้อยู่ในหน้าจอก็ลบคลาสออก
+        }
+    });
+}
 
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('load', checkVisibility);
+window.addEventListener('scroll', checkVisibility);
+window.addEventListener('load', checkVisibility);
+
     </script>
     
     <div class="info">
