@@ -512,13 +512,13 @@
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const slideWidth = 33.33; // %
-    
-    slider.style.transform = translateX(-${currentIndex * slideWidth}%);
-    
+
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
     function moveSlide(direction) {
         currentIndex += direction;
         slider.style.transition = "transform 0.4s ease-out";
-        slider.style.transform = translateX(-${currentIndex * slideWidth}%);
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
     }
 
     slider.addEventListener("transitionend", () => {
@@ -526,17 +526,18 @@
             slider.style.transition = "none";
             currentIndex = totalSlides - 4;
             requestAnimationFrame(() => {
-                slider.style.transform = translateX(-${currentIndex * slideWidth}%);
+                slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
             });
         } else if (currentIndex >= totalSlides - 2) {
             slider.style.transition = "none";
             currentIndex = 2;
             requestAnimationFrame(() => {
-                slider.style.transform = translateX(-${currentIndex * slideWidth}%);
+                slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
             });
         }
     });
 </script>
+
 
     <div class="info">
         <p><strong>เคยรักษามาหลายที่ แต่สิวยังอยู่? มาเคลียร์สิว<br>แล้วกลับมามีผิวใส ที่ เอ็มวีต้าคลินิก!</strong></p>
