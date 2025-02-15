@@ -595,8 +595,10 @@ body {
 }
 
 @media (max-width: 768px) {
-    .four-column-container {
-        grid-template-columns: repeat(2, 1fr); /* ถ้าจอเล็กกว่าหรือเท่ากับ 768px ให้ใช้ 2 คอลัมน์ */
+    .four-column-item img {
+        width: 100%;
+        height: 150px; /* ปรับให้เป็นจตุรัสขนาดเล็กลงสำหรับมือถือ */
+        object-fit: cover;
     }
 }
 </style>
