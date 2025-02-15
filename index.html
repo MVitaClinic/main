@@ -78,26 +78,25 @@
     </script>
 
     <style>
-body {
-    font-family: 'Kanit', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://github.com/MVitaClinic/main/blob/main/BG%20MVitaClinic%20PC%201.png?raw=true') no-repeat center center fixed;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed; /* เพิ่มบรรทัดนี้ */
-    color: #C8A951;
-}
+    body {
+        font-family: 'Kanit', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://github.com/MVitaClinic/main/blob/main/BG%20MVitaClinic%20PC%201.png?raw=true') no-repeat center center fixed;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed; /* เพิ่มบรรทัดนี้ */
+        color: #C8A951;
+    }
     
-
-        header {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            border-bottom: 3px solid #A67C00;
-            color: #A67C00;
+     header {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        border-bottom: 3px solid #A67C00;
+        color: #A67C00;
         }
         
         h2 {
@@ -133,7 +132,7 @@ body {
     overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
     }
 
-            @media (max-width: 768px) {
+    @media (max-width: 768px) {
     body {
         background-attachment: scroll; /* บางเบราว์เซอร์มือถือไม่รองรับ fixed */
     }
@@ -151,26 +150,26 @@ body {
     }
 
 
-.container {
-    text-align: center;
-    padding: 30px;
-    background: url('https://github.com/MVitaClinic/main/blob/main/cover%20m%20vita%20clinic-01.jpg?raw=true') 
+        .container {
+            text-align: center;
+            padding: 30px;
+            background: url('https://github.com/MVitaClinic/main/blob/main/cover%20m%20vita%20clinic-01.jpg?raw=true') 
                 no-repeat center center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 20px auto;
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    border-radius: 10px;
-    color: #C8A951;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border-radius: 10px;
+            color: #C8A951;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
         .button:hover {
-    background-color: #8c734d;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #8c734d;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         
         .container, .info {
@@ -571,16 +570,16 @@ body {
 </div>
 </div>
 
-<style>
-.features-container {
+        <style>
+        .features-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* กำหนดเป็น 3 คอลัมน์ */
     gap: 20px; /* ระยะห่างระหว่างคอลัมน์ */
     padding: 20px;
     text-align: center;
-}
+    }
 
-.feature-item {
+        .feature-item {
     background-color: transparent;
     border: none;
     border-radius: 20px;
@@ -592,24 +591,16 @@ body {
     font-size: 15px;
     color: #C8A951;
     padding: 15px;
-    opacity: 0; /* ตั้งค่าเริ่มต้นให้หายไป */
-    transform: translateY(50px); /* ย้ายตำแหน่งให้หายไป */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* เพิ่มการเปลี่ยนแปลง */
-}
+    }
     
-.feature-item.visible {
-    opacity: 1; /* เมื่อแสดงจะมีความโปร่งใส */
-    transform: translateY(0); /* ย้ายกลับตำแหน่งเดิม */
-}
-    
-.feature-item img {
+        .feature-item img {
     width: 100%;
     height: auto;
     border-radius: 15px;
     margin-bottom: 10px;
-}
+    }
 
-.checkmark {
+        .checkmark {
     display: inline-block;
     background-color: green;
     color: white;
@@ -620,9 +611,9 @@ body {
     text-align: center;
     line-height: 30px;
     border-radius: 50%;
-}
+    }
 
-@media (max-width: 768px) {
+        @media (max-width: 768px) {
     .features-container {
         grid-template-columns: 1fr;
     }
@@ -632,26 +623,8 @@ body {
         height: auto;
         object-fit: cover;
     }
-}
-</style>
-
-    <script>
-function checkVisibility() {
-    const items = document.querySelectorAll('.feature-item');
-    items.forEach(item => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-            item.classList.add('visible');
-        } else {
-            item.classList.remove('visible'); // ถ้าไม่ได้อยู่ในหน้าจอก็ลบคลาสออก
-        }
-    });
-}
-
-window.addEventListener('scroll', checkVisibility);
-window.addEventListener('load', checkVisibility);
-
-    </script>
+    }
+        </style>
     
     <div class="info">
         <h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้า คลินิก</h2>
