@@ -213,7 +213,7 @@ body {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive Design */
+
         @media (max-width: 768px) {
             .footer {
                 flex-direction: column;
@@ -593,16 +593,14 @@ body {
     line-height: 30px;
     border-radius: 50%;
 }
-    @media (max-width: 480px) {
-    .four-column-container {
-        grid-template-columns: 1fr;
-    }
 
-    .four-column-item img {
-        height: 140px;
+@media (max-width: 768px) {
+    .four-column-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 </style>
+
 
     <script>
     function checkVisibility() {
