@@ -629,7 +629,7 @@ body {
 
     <script>
     function checkVisibility() {
-        const items = document.querySelectorAll('.grid-item');
+        const items = document.querySelectorAll('.feature-item');
         items.forEach(item => {
             const rect = item.getBoundingClientRect();
             if (rect.top <= window.innerHeight && rect.bottom >= 0) {
