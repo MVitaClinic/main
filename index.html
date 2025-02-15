@@ -441,8 +441,8 @@
 <div class="info">
     <div class="slider-container">
         <div class="slider" id="slider">
-            <div class="slide"><img src="image8.jpg" alt="Image 8"></div> <!-- Clone Before last -->
-            <div class="slide"><img src="image9.jpg" alt="Image 9"></div> <!-- Clone last -->
+            <div class="slide"><img src="image8.jpg" alt="Image 8"></div>
+            <div class="slide"><img src="image9.jpg" alt="Image 9"></div>
             <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
             <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
             <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
@@ -452,8 +452,8 @@
             <div class="slide"><img src="image7.jpg" alt="Image 7"></div>
             <div class="slide"><img src="image8.jpg" alt="Image 8"></div>
             <div class="slide"><img src="image9.jpg" alt="Image 9"></div>
-            <div class="slide"><img src="image1.jpg" alt="Image 1"></div> <!-- Clone first -->
-            <div class="slide"><img src="image2.jpg" alt="Image 2"></div> <!-- Clone second -->
+            <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+            <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
         </div>
         <div class="slider-navigation">
             <button class="prev" onclick="moveSlide(-1)">⬅</button>
@@ -502,6 +502,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    /* สำหรับมือถือ */
+    @media (max-width: 768px) {
+        .slide {
+            min-width: 100%;
+        }
     }
 </style>
 
