@@ -751,20 +751,59 @@
     </style>
 
     <div class="info">
+         <div class="flex-section">
+            <div class="flex-item">
+            <p>ข้อความในคอลัมน์ 1</p>
+            <img src="https://via.placeholder.com/300" alt="Item 1">
+            </div>
+    
+            <div class="flex-item">
+            <p>ข้อความในคอลัมน์ 1</p>
+            <img src="https://via.placeholder.com/300" alt="Item 1">
+            </div>
+        </div>
+        
         <div class="star-rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-          </div>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
     </div>
     
     <style>
-    .star-rating {
+       .flex-section {
+      display: flex;
+      flex-wrap: wrap; /* ให้สามารถเว้นแถวได้ */
+      justify-content: center; /* จัดคอลัมน์ให้อยู่กลาง */
+      gap: 20px;
+      padding: 20px;
+    }
+
+        .flex-item {
+      width: 40%; /* กำหนดความกว้างคอลัมน์ 40% */
+      text-align: center;
+      border-radius: 10%; /* รูปภาพโค้งมน 10% */
+      background-color: transparent;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .flex-item img {
+      width: 100%; /* ให้ภาพขยายเต็มคอลัมน์ */
+      border-radius: 10%; /* ทำให้ภาพโค้งมน 10% */
+    }
+        
+        .star-rating {
       font-size: 2rem; /* ขนาดของดาว */
       color: gold;    /* สีของดาว */
     }
+        
+    @media (max-width: 768px) {
+        .flex-item {
+    width: 100%; /* เปลี่ยนให้แสดงเป็น 1 คอลัมน์เต็ม */
+    
     </style>
     
     <div class="info">
