@@ -139,14 +139,18 @@
     padding: 0;
     overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
     }
-
+    }
+        
     @media (max-width: 768px) {
     body {
         background-attachment: scroll; /* บางเบราว์เซอร์มือถือไม่รองรับ fixed */
         padding-top: 80px; /* ปรับให้เหมาะสมกับ Header ที่เล็กลง */
     }
-    }
 
+    header {
+        padding: 15px; /* ลดขนาด Header ลง */
+}
+           }
         
     .background-container {
         position: fixed;
@@ -157,8 +161,6 @@
         background: url('https://github.com/MVitaClinic/main/blob/main/BG%20M%20Vita%20Clinic%20Mobile.png?raw=true') no-repeat center center;
         background-size: cover;
         z-index: -1;
-    }
-    }
     }
         
         .container {
