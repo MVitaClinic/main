@@ -89,17 +89,23 @@
         background-position: center center;
         background-attachment: fixed; /* เพิ่มบรรทัดนี้ */
         color: #C8A951;
+        padding-top: 80px;
     }
     
-     header {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 20px;
-        text-align: center;
-        font-size: 24px;
-        font-weight: bold;
-        border-bottom: 3px solid #A67C00;
-        color: #A67C00;
-        }
+         header {
+    position: fixed;  /* ทำให้ Header ติดอยู่ด้านบน */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 3px solid #A67C00;
+    color: #A67C00;
+    z-index: 1000;  /* ทำให้ Header อยู่เหนือเนื้อหา */
+    }
         
         h2 {
     color: #A67C00;
