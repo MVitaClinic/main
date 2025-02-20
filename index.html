@@ -633,27 +633,30 @@
         <img src="https://github.com/MVitaClinic/main/blob/main/Call-M%20Vita%20Clinic.png?raw=true" alt="call 0814922626">
     </a>
 </div>
-    </div>
 
 <style>
     .social-links {
         display: flex;
-        justify-content: space-between; /* จัดเรียงให้มีช่องว่าง */
-        gap: 20px;
-        flex-wrap: wrap; /* ให้สามารถยืดหยุ่นตามขนาดหน้าจอ */
-    }
-
-    .link-item {
-        flex: 1 0 32%; /* ให้แต่ละรายการมีความกว้าง 32% */
-        text-align: center;
+        justify-content: center;
+        gap: 10px;
     }
 
     .link-item img {
-        width: 100%; /* ให้รูปภาพเต็มพื้นที่ */
-        max-width: 200px; /* กำหนดขนาดสูงสุด */
-        height: auto;
+        width: 200px;
+    }
+
+    @media (max-width: 768px) {
+        .social-links {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .link-item img {
+            width: 33.33%; /* ทำให้แต่ละรูปมีขนาด 1/3 ของความกว้างหน้าจอ */
+        }
     }
 </style>
+
 
     
     <div class="info">
