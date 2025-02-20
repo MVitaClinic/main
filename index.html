@@ -650,8 +650,12 @@
             max-width: 100%; /* ให้รูปเต็มจอในโทรศัพท์ */
         }
         .social-links {
-            flex-direction: column; /* ให้เรียงเป็นแนวตั้งในโทรศัพท์ */
-        }
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        display: flex;
+        flex-direction: row; /* เรียงเป็นแนวนอนในโทรศัพท์ */
+        justify-content: space-between; /* เว้นช่องว่างระหว่างคอลัมน์ */
+    }        
     }
 </style>
 
