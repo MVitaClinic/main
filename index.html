@@ -647,14 +647,20 @@
         max-width: 200px; /* ปรับขนาดรูปใน PC */
         width: auto;
     }
-
-    @media (max-width: 768px) {
+       @media (max-width: 768px) {
         .social-links {
-        gap: 10px;
-        display: flex;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: space-between; /* เว้นช่องว่างระหว่างคอลัมน์ */
-    }        
+            justify-content: space-between;
+        }
+
+        .link-item {
+            flex: 1 0 30%; /* ปรับให้แต่ละรูปใช้พื้นที่ประมาณ 30% */
+            text-align: center;
+        }
+
+        .link-item img {
+            width: 100%; /* ให้รูปภาพเต็มพื้นที่ */
+            max-width: none; /* ยกเลิกขนาดสูงสุด */
+        }
     }
 </style>
 
