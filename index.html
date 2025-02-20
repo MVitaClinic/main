@@ -638,29 +638,20 @@
 <style>
     .social-links {
         display: flex;
-        justify-content: center; /* เรียงกลาง */
+        justify-content: space-between; /* จัดเรียงให้มีช่องว่าง */
         gap: 20px;
         flex-wrap: wrap; /* ให้สามารถยืดหยุ่นตามขนาดหน้าจอ */
     }
 
-    .link-item img {
-        max-width: 200px; /* ปรับขนาดรูปใน PC */
-        width: auto;
+    .link-item {
+        flex: 1 0 32%; /* ให้แต่ละรายการมีความกว้าง 32% */
+        text-align: center;
     }
-       @media (max-width: 768px) {
-        .social-links {
-            justify-content: space-between;
-        }
 
-        .link-item {
-            flex: 1 0 30%; /* ปรับให้แต่ละรูปใช้พื้นที่ประมาณ 30% */
-            text-align: center;
-        }
-
-        .link-item img {
-            width: 100%; /* ให้รูปภาพเต็มพื้นที่ */
-            max-width: none; /* ยกเลิกขนาดสูงสุด */
-        }
+    .link-item img {
+        width: 100%; /* ให้รูปภาพเต็มพื้นที่ */
+        max-width: 200px; /* กำหนดขนาดสูงสุด */
+        height: auto;
     }
 </style>
 
