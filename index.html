@@ -644,7 +644,7 @@
     }
 
     .link-item img {
-        max-width: 100px; /* ปรับขนาดรูปใน PC */
+        max-width: 50%; /* ปรับขนาดรูปใน PC */
         width: auto;
     }
 
@@ -656,7 +656,7 @@
         .social-links {
         gap: 10px;
         display: flex;
-        flex-direction: row; /* เรียงเป็นแนวนอนในโทรศัพท์ */
+        grid-template-columns: repeat(3, 1fr);
         justify-content: space-between; /* เว้นช่องว่างระหว่างคอลัมน์ */
     }        
     }
