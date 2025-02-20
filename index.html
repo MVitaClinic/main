@@ -615,70 +615,42 @@
 
     <div class="info">
     <h2>นัดเข้าปรึกษาคุณหมอ ฟรี</h2>
-    <div class="link-grid">
-        <a href="https://page.line.me/mvitaclinic" class="link-item" target="_blank">
-            <img src="https://github.com/MVitaClinic/main/blob/main/Line-M%20Vita%20Clinic.png?raw=true" alt="LINE@ : @mvitaclinic">
-        </a>
-        <a href="https://www.facebook.com/mvitaclinic.thailand/" class="link-item" target="_blank">
-            <img src="https://github.com/MVitaClinic/main/blob/main/Facebook-m%20vita%20clinic.png?raw=true" alt="Facebook M Vita Clinic">
-        </a>
-        <a href="tel:0814922626" class="link-item">
-            <img src="https://github.com/MVitaClinic/main/blob/main/Call-M%20Vita%20Clinic.png?raw=true" alt="call 0814922626">
-        </a>
+<div class="social-links">
+    <a href="https://page.line.me/mvitaclinic" class="link-item" target="_blank">
+        <img src="https://github.com/MVitaClinic/main/blob/main/Line-M%20Vita%20Clinic.png?raw=true" alt="LINE@ : @mvitaclinic">
+    </a>
+    <a href="https://www.facebook.com/mvitaclinic.thailand/" class="link-item" target="_blank">
+        <img src="https://github.com/MVitaClinic/main/blob/main/Facebook-m%20vita%20clinic.png?raw=true" alt="Facebook M Vita Clinic">
+    </a>
+    <a href="tel:0814922626" class="link-item">
+        <img src="https://github.com/MVitaClinic/main/blob/main/Call-M%20Vita%20Clinic.png?raw=true" alt="call 0814922626">
+    </a>
+</div>
     </div>
 
-    <style>
-        .link-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* สร้าง 3 คอลัมน์ */
-            gap: 5px; /* ช่องว่างระหว่างคอลัมน์ */
-            padding: 16px;
-            max-width: 960px; /* กำหนดความกว้างสูงสุด */
-            margin: 0 auto; /* จัดกึ่งกลาง */
-        }
+<style>
+    .social-links {
+        display: flex;
+        justify-content: center; /* เรียงกลาง */
+        gap: 20px;
+        flex-wrap: wrap; /* ให้สามารถยืดหยุ่นตามขนาดหน้าจอ */
+    }
 
-        .link-item {
-            display: flex;
-            justify-content: center; /* จัดรูปภาพให้อยู่กลาง */
-            align-items: center;
-        }
+    .link-item img {
+        max-width: 100px; /* ปรับขนาดรูปใน PC */
+        width: auto;
+    }
 
-        .link-item:nth-child(2) {
-            justify-self: center; /* ทำให้คอลัมน์ 2 อยู่กึ่งกลาง */
-        }
-
+    @media (max-width: 768px) {
         .link-item img {
-            border-radius: 12px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            animation: moveShadow 3s infinite linear; /* การเคลื่อนที่ของแสงเงา */
+            max-width: 100%; /* ให้รูปเต็มจอในโทรศัพท์ */
         }
+        .social-links {
+            flex-direction: column; /* ให้เรียงเป็นแนวตั้งในโทรศัพท์ */
+        }
+    }
+</style>
 
-        /* การเคลื่อนที่ของแสงเงา */
-        @keyframes moveShadow {
-            0% {
-                box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.2);
-            }
-            100% {
-                box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
-            }
-        }
-
-        .link-item img:hover {
-            transform: scale(1.08);
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            .link-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-            }
-        }
-    </style>
-    </div>
     
     <div class="info">
           <h2>8 วิธีรักษาสิว ให้ หายขาด<br>ด้วย โปรแกรม Medi-Aclear</h2>
