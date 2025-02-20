@@ -149,9 +149,6 @@
     header {
         padding: 15px; /* ลดขนาด Header ลง */
     }
-    .button {
-        font-size: 6px;
-    }
     }
         
     .background-container {
@@ -280,6 +277,13 @@
   <h1 style="color: #A67C00;">คลินิกรักษาสิว ต้อง เอ็มวีต้าคลินิก</h1>
   <a href="#" class="button">&gt;&gt; พิสูจน์แล้วกว่า 10,000+ เคส เห็นผลลัพธ์ใน 2 เดือน &lt;&lt;</a>
 </div>
+
+    <style>
+   @media (max-width: 768px) {
+        .button {
+            font-size: 10px; /* ขนาด 14px ในโทรศัพท์ */
+        }
+    }  </style>
     
 <div style="display: flex; justify-content: center; gap: 5px; align-items: center;">
     <div style="padding: 10px; text-align: center;">
@@ -646,10 +650,10 @@
 
     @media (max-width: 768px) {
         .link-item img {
-            max-width: 100%; /* ให้รูปเต็มจอในโทรศัพท์ */
+        max-width: 100%; /* ให้รูปเต็มจอในโทรศัพท์ */
         }
+        
         .social-links {
-        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         display: flex;
         flex-direction: row; /* เรียงเป็นแนวนอนในโทรศัพท์ */
