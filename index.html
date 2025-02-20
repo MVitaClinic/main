@@ -634,6 +634,7 @@
         </a>
     </div>
 </div>
+
 <style>
     .social-links {
         display: flex;
@@ -643,19 +644,31 @@
 
     .link-item img {
         width: 200px;
-        animation: blink 2s infinite; /* เพิ่มการกระพริบ */
+        position: relative;
+        overflow: hidden;
     }
 
-    /* สร้าง animation การกระพริบ */
-    @keyframes blink {
+    .link-item img:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5); /* สีแสงที่เลื่อนผ่าน */
+        animation: light-sweep 2s infinite;
+    }
+
+    /* สร้างแสงไฟเลื่อน */
+    @keyframes light-sweep {
         0% {
-            opacity: 1;
+            left: -100%;
         }
         50% {
-            opacity: 0;
+            left: 100%;
         }
         100% {
-            opacity: 1;
+            left: -100%;
         }
     }
 
@@ -667,10 +680,10 @@
         }
         .link-item img {
             width: 100px;
-            animation: blink 2s infinite; /* เพิ่มการกระพริบ */
         }
     }
 </style>
+
 
     
     <div class="info">
