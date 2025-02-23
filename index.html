@@ -149,18 +149,6 @@
     header {
         padding: 15px; /* ลดขนาด Header ลง */
     }
-    .hamburger {
-        position: fixed;
-        top: 50px;
-        left: 20px;
-        width: 35px;
-        height: 35px;
-    }
-     .menu {
-        display: none;
-        position: fixed;
-        top: 50px; /* เพิ่ม 10px จากตำแหน่งเดิม */
-    }
         }
 
         .hamburger {
@@ -215,6 +203,19 @@
         /* Show menu when active */
         .hamburger.active + .menu {
             display: block;
+        }
+        
+     @media (max-width: 768px) {
+        .hamburger {
+                top: 50px;  /* ปรับตำแหน่งปุ่ม hamburger ให้อยู่ในตำแหน่งที่เหมาะสมสำหรับมือถือ */
+                left: 20px;
+                width: 35px; /* ขนาดปุ่มใหญ่ขึ้น */
+                height: 35px;
+            }
+
+        .menu {
+                top: 50px; /* ปรับตำแหน่งของเมนูให้เหมาะสม */
+            }
         }
         
     .background-container {
