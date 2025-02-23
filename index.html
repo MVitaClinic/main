@@ -806,30 +806,83 @@
     
     </style>
 
-       <div class="info">
+          <div class="info">
         <h2>รีวิว คลินิกรักษาสิว จาก Google</h2> 
-             <div class="outer-box">
+        <div class="reviews-container">
+            <div class="outer-box">
                 <div class="circle">
-                <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%84%E0%B8%B8%E0%B8%93%20PRC%20PK.png?raw=true" alt="คุณ PRC PK">
+                    <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%84%E0%B8%B8%E0%B8%93%20PRC%20PK.png?raw=true" alt="คุณ PRC PK">
                 </div>
                 
                 <div class="bold-text"><span style="color: #A67C00;">PRC PK</span></div>
                 <div style="font-size: 1rem;"><span style="color: #DEB82D;">⭐⭐⭐⭐⭐</span></div>
 
                 <div class="inner-box">
-                คุณหมอรักษา ให้คำปรึกษาดีค่ะ พนักงานน่ารัก กดสิวเก่งมาก แนะนำเลยค่าา 🥰
+                    คุณหมอรักษา ให้คำปรึกษาดีค่ะ พนักงานน่ารัก กดสิวเก่งมาก แนะนำเลยค่าา 🥰
                 </div>
             </div>
-       </div>
-       <style>
-        .outer-box {
-            border: 2px solid black;
+            
+            <div class="outer-box">
+                <div class="circle">
+                    <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%84%E0%B8%B8%E0%B8%93%20PRC%20PK.png?raw=true" alt="คุณ PRC PK">
+                </div>
+                
+                <div class="bold-text"><span style="color: #A67C00;">PRC PK</span></div>
+                <div style="font-size: 1rem;"><span style="color: #DEB82D;">⭐⭐⭐⭐⭐</span></div>
+
+                <div class="inner-box">
+                    คุณหมอรักษา ให้คำปรึกษาดีค่ะ พนักงานน่ารัก กดสิวเก่งมาก แนะนำเลยค่าา 🥰
+                </div>
+            </div>
+            
+            <div class="outer-box">
+                <div class="circle">
+                    <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%84%E0%B8%B8%E0%B8%93%20PRC%20PK.png?raw=true" alt="คุณ PRC PK">
+                </div>
+                
+                <div class="bold-text"><span style="color: #A67C00;">PRC PK</span></div>
+                <div style="font-size: 1rem;"><span style="color: #DEB82D;">⭐⭐⭐⭐⭐</span></div>
+
+                <div class="inner-box">
+                    คุณหมอรักษา ให้คำปรึกษาดีค่ะ พนักงานน่ารัก กดสิวเก่งมาก แนะนำเลยค่าา 🥰
+                </div>
+            </div>
+            
+            <div class="outer-box">
+                <div class="circle">
+                    <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%84%E0%B8%B8%E0%B8%93%20PRC%20PK.png?raw=true" alt="คุณ PRC PK">
+                </div>
+                
+                <div class="bold-text"><span style="color: #A67C00;">PRC PK</span></div>
+                <div style="font-size: 1rem;"><span style="color: #DEB82D;">⭐⭐⭐⭐⭐</span></div>
+
+                <div class="inner-box">
+                    คุณหมอรักษา ให้คำปรึกษาดีค่ะ พนักงานน่ารัก กดสิวเก่งมาก แนะนำเลยค่าา 🥰
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <style>
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
             padding: 20px;
-            width: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+       .outer-box {
+            padding: 20px;
             text-align: center;
             position: relative;
         }
-
+         
         .circle {
             width: 50px;
             height: 50px;
@@ -847,11 +900,6 @@
         .bold-text {
             font-weight: bold;
             margin-top: 10px;
-        }
-
-        .italic-text {
-            font-style: italic;
-            margin-top: 5px;
         }
 
         .inner-box {
