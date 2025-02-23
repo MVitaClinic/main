@@ -349,11 +349,23 @@
         <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">About</a>
         <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">Contact</a>
     </div>
-    <script>
+     <script>
         function toggleMenu() {
             const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
             hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
         }
+
+        // ปิดเมนูเมื่อคลิกที่ส่วนอื่น
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
+            if (!hamburger.contains(event.target) && !menu.contains(event.target)) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
     </script>
   
 <div class="container">
