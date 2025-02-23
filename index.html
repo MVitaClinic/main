@@ -345,15 +345,32 @@
         <div></div>
     </div>
     <div class="menu">
-        <a href="https://www.example.com">Home</a>
-        <a href="https://www.example.com/about">About</a>
-        <a href="https://www.example.com/contact">Contact</a>
+        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">Home</a>
+        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">About</a>
+        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">Contact</a>
     </div>
-    <script>
-        function toggleMenu() {
+       <script>
+        function toggleMenu(event) {
+            // ป้องกันการเกิด event bubbling เมื่อคลิกที่ปุ่ม
+            event.stopPropagation();
+
+            // toggle class เพื่อเปิด/ปิดเมนู
             const hamburger = document.querySelector('.hamburger');
             hamburger.classList.toggle('active');
         }
+
+        // ซ่อนเมนูเมื่อคลิกที่ส่วนอื่นๆ ของหน้าจอ
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
+
+            // ตรวจสอบว่าไม่ได้คลิกที่ปุ่ม hamburger หรือเมนู
+            if (!hamburger.contains(event.target) && !menu.contains(event.target)) {
+                // ซ่อนเมนู
+                const hamburger = document.querySelector('.hamburger');
+                hamburger.classList.remove('active');
+            }
+        });
     </script>
   
 <div class="container">
