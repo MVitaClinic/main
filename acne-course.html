@@ -359,7 +359,7 @@
     </script>
      
 
-    <div class="blog-cover" style="background-image: url('your-image.jpg');"></div>
+    <div class="blog-cover"><img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ"></div>
         
     <style>
     .blog-cover {
@@ -373,6 +373,12 @@
       border-radius: 10px; /* ทำให้มุมมีความโค้ง */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* เงาที่บริเวณรูป */
     }
+    
+    @media (max-width: 768px) {
+    .blog-cover {
+      height: 400px; /* ลดขนาดความสูงสำหรับมือถือ */
+      border-radius: 5px; /* ลดความโค้งของมุม */
+      }
     </style>
         
     <div class="footer">
