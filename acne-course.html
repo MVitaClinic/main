@@ -96,7 +96,7 @@
         padding-top: 80px;
     }
     
-         header {
+        .custom-header {
     position: fixed;  /* ทำให้ Header ติดอยู่ด้านบน */
     top: 0;
     left: 0;
@@ -104,7 +104,7 @@
     background-color: white;
     padding: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 24px; /* ปรับขนาดได้ที่นี่ */
     font-weight: bold;
     border-bottom: 3px solid #A67C00;
     color: #A67C00;
@@ -120,7 +120,7 @@
         }
         
         @media screen {
-    header {
+    .custom-header {
         font-size: 18px;
         }
     }
@@ -150,7 +150,7 @@
         background-attachment: scroll; /* บางเบราว์เซอร์มือถือไม่รองรับ fixed */
         padding-top: 80px; /* ปรับให้เหมาะสมกับ Header ที่เล็กลง */
     }
-    header {
+    .custom-header {
         padding: 15px; /* ลดขนาด Header ลง */
     }
         }
@@ -326,7 +326,7 @@
 </head>
     
 <body>
-    <header>รักษาสิว ราคา ถูกและดี ที่ให้ผลลัพธ์ดีเยี่ยม [อัปเดต 2025]</header>
+    <div class="custom-header">รักษาสิว ราคา ถูกและดี ที่ให้ผลลัพธ์ดีเยี่ยม [อัปเดต 2025]</div>
     
     <div class="hamburger" onclick="toggleMenu()">
         <div></div>
@@ -359,12 +359,10 @@
     </script>
      
 
-   <div class="blog-cover">
-    <img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ">
-    </div>
+   <div class="blog-cover"><img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ"></div>
 
-<style>
-    .blog-cover {
+    <style>
+        .blog-cover {
         width: 90%; /* ปรับขนาดกว้างสุดเป็น 90% ของจอ */
         max-width: 1200px; /* ไม่ให้ใหญ่เกิน 1200px */
         height: 60vh; /* ใช้ 60% ของความสูงหน้าจอ */
@@ -375,7 +373,7 @@
         overflow: hidden;
     }
 
-    .blog-cover img {
+        .blog-cover img {
         width: 100%; /* ปรับให้เต็มพื้นที่ */
         height: 100%; /* ปรับให้เต็มพื้นที่ */
         object-fit: cover; /* ให้รูปเต็มกรอบและคงอัตราส่วน */
@@ -402,8 +400,9 @@
         }
     }
     </style>
+
+    <div id="duplicate-headers"></div>
     
-        
     <div class="footer">
         <div>
             <h3>คลินิกรักษาสิว ครบวงจร</h3>
