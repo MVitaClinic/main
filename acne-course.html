@@ -403,12 +403,12 @@
 
     <div id="duplicate-headers"></div>
 <script>
-  // คัดลอกเนื้อหาจาก .custom-header
-  const headerContent = document.querySelector(".custom-header");
-  console.log(headerContent); // เช็คว่ามีการเลือก header หรือยัง
+// คัดลอกข้อความจาก .custom-header
+const headerContent = document.querySelector(".custom-header");
+console.log(headerContent.textContent); // แสดงข้อความใน console
 
-  const duplicateContent = headerContent.cloneNode(true); // คัดลอกทั้ง element และ content
-  document.getElementById("duplicate-headers").appendChild(duplicateContent);
+// แสดงข้อความใน #duplicate-headers
+document.getElementById("duplicate-headers").textContent = headerContent.textContent;
 </script>
     
     <div class="footer">
