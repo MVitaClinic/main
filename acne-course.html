@@ -402,14 +402,24 @@
     </style>
 
     <div id="duplicate-headers"></div>
-<script>
-// คัดลอกข้อความจาก .custom-header
-const headerContent = document.querySelector(".custom-header");
-console.log(headerContent.textContent); // แสดงข้อความใน console
+            <script>
+        // คัดลอกข้อความจาก .custom-header
+        const headerContent = document.querySelector(".custom-header");
+        console.log(headerContent.textContent); // แสดงข้อความใน console
 
-// แสดงข้อความใน #duplicate-headers
-document.getElementById("duplicate-headers").textContent = headerContent.textContent;
-</script>
+        // แสดงข้อความใน #duplicate-headers
+        const duplicateHeader = document.getElementById("duplicate-headers");
+        duplicateHeader.textContent = headerContent.textContent;
+
+        // กำหนดสไตล์
+        duplicateHeader.style.fontSize = "25px";
+        duplicateHeader.style.color = "#A67C00";
+        duplicateHeader.style.fontWeight = "bold";
+        duplicateHeader.style.textAlign = "center";
+        duplicateHeader.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.5)";
+        duplicateHeader.style.webkitTextStroke = "1px white";  // ขอบตัวหนังสือสีขาว
+        duplicateHeader.style.textStroke = "1px white";  // ขอบตัวหนังสือสีขาว
+            </script>
     
     <div class="footer">
         <div>
