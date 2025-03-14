@@ -359,27 +359,50 @@
     </script>
      
 
-    <div class="blog-cover"><img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ"></div>
-        
-    <style>
+   <div class="blog-cover">
+    <img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ">
+    </div>
+
+<style>
     .blog-cover {
-      width: 100%;
-      max-width: 1200px; /* ขนาดสูงสุด 1200px */
-      height: 800px; /* ความสูง 800px */
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      margin: 0 auto; /* จัดกึ่งกลางในหน้าจอ */
-      border-radius: 10px; /* ทำให้มุมมีความโค้ง */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* เงาที่บริเวณรูป */
+        width: 90%; /* ปรับขนาดกว้างสุดเป็น 90% ของจอ */
+        max-width: 1200px; /* ไม่ให้ใหญ่เกิน 1200px */
+        height: 60vh; /* ใช้ 60% ของความสูงหน้าจอ */
+        position: relative;
+        margin: 0 auto; /* จัดกึ่งกลาง */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
     }
-    
+
+    .blog-cover img {
+        width: 100%; /* ปรับให้เต็มพื้นที่ */
+        height: 100%; /* ปรับให้เต็มพื้นที่ */
+        object-fit: cover; /* ให้รูปเต็มกรอบและคงอัตราส่วน */
+        border-radius: inherit;
+    }
+
+    @media (max-width: 1024px) {
+        .blog-cover {
+            height: 50vh; /* ลดขนาดเมื่อจอเล็กลง */
+        }
+    }
+
     @media (max-width: 768px) {
-    .blog-cover {
-      height: 400px; /* ลดขนาดความสูงสำหรับมือถือ */
-      border-radius: 5px; /* ลดความโค้งของมุม */
-      }
+        .blog-cover {
+            height: 40vh; /* ลดขนาดอีกเมื่อเป็นมือถือ */
+            border-radius: 5px; /* ลดความโค้ง */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .blog-cover {
+            width: 95%; /* ปรับให้กว้างขึ้นเล็กน้อยสำหรับมือถือ */
+            height: 35vh; /* ลดขนาดลงอีก */
+        }
+    }
     </style>
+    
         
     <div class="footer">
         <div>
