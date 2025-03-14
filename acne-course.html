@@ -358,47 +358,49 @@
         });
     </script>
      
-    <div class="info">
-    <div class="blog-cover"><img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ"></div>
-
-        <style>
-    .blog-cover {
-        width: 100%; /* ปรับให้เต็มความกว้าง */
-        height: auto; /* ความสูงจะคำนวณจากอัตราส่วนของภาพ */
-        position: relative;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-    }
-
-    .blog-cover img {
-        width: 100%; /* ปรับให้เต็มความกว้าง */
-        height: auto; /* ความสูงอัตโนมัติ */
-        object-fit: cover;
-        border-radius: inherit;
-    }
-
-    /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
-    @media (max-width: 1024px) {
-        .blog-cover {
-            height: 50vh; /* ลดขนาดตามความสูงหน้าจอ */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .blog-cover {
-            height: 40vh; /* ลดขนาดลงสำหรับ iPad */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .blog-cover {
-            height: 35vh; /* ลดขนาดลงสำหรับมือถือ */
-        }
-    }
-        </style>
+ <div class="info" style="margin: 2px;">
+    <div class="blog-cover">
+        <img src="your-image.jpg" alt="ชื่อรูปภาพของคุณ">
     </div>
+
+    <style>
+        .blog-cover {
+            width: 100%; /* ปรับให้เต็มความกว้าง */
+            height: auto; /* ความสูงจะคำนวณจากอัตราส่วนของภาพ */
+            position: relative;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .blog-cover img {
+            width: 100%; /* ปรับให้เต็มความกว้าง */
+            height: auto; /* ความสูงอัตโนมัติ */
+            object-fit: cover;
+            border-radius: inherit;
+        }
+
+        /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
+        @media (max-width: 1024px) {
+            .blog-cover {
+                height: 50vh; /* ลดขนาดตามความสูงหน้าจอ */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-cover {
+                height: 40vh; /* ลดขนาดลงสำหรับ iPad */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-cover {
+                height: 35vh; /* ลดขนาดลงสำหรับมือถือ */
+            }
+        }
+    </style>
+</div>
 
 
     <div id="duplicate-headers"></div>
