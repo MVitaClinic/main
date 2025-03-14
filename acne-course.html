@@ -402,12 +402,14 @@
     </style>
 
     <div id="duplicate-headers"></div>
-    <script>
-    // คัดลอกเนื้อหาจาก .custom-header
-    const headerContent = document.querySelector(".custom-header");
-    const duplicateContent = headerContent.cloneNode(true); // คัดลอกทั้ง element และ content
-    document.getElementById("duplicate-headers").appendChild(duplicateContent);
-    </script>
+<script>
+  // คัดลอกเนื้อหาจาก .custom-header
+  const headerContent = document.querySelector(".custom-header");
+  console.log(headerContent); // เช็คว่ามีการเลือก header หรือยัง
+
+  const duplicateContent = headerContent.cloneNode(true); // คัดลอกทั้ง element และ content
+  document.getElementById("duplicate-headers").appendChild(duplicateContent);
+</script>
     
     <div class="footer">
         <div>
