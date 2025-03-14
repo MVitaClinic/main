@@ -423,27 +423,6 @@
         duplicateHeader.style.textStroke = "1px white";  // ขอบตัวหนังสือสีขาว
         document.getElementById("duplicate-headers").style.fontFamily = "Kanit, sans-serif";
         duplicateHeader.style.marginTop = "20px";
-        // การใช้ media query ภายใน script (JavaScript)
-        function adjustFontSize() {
-        const screenWidth = window.innerWidth;
-
-        // ถ้าหน้าจอกว้างน้อยกว่า 768px
-        if (screenWidth < 768) {
-            document.querySelector('.custom-header').style.fontSize = '22px';
-            duplicateHeader.style.fontSize = '22px';
-        }
-        // ถ้าหน้าจอกว้างกว่า 769px
-        else {
-            document.querySelector('.custom-header').style.fontSize = '22px';
-            duplicateHeader.style.fontSize = '22px';
-                }
-                }
-
-            // เรียกฟังก์ชันเมื่อโหลดหน้าเพจ
-            window.onload = adjustFontSize;
-
-            // เรียกฟังก์ชันเมื่อขนาดหน้าจอเปลี่ยน
-            window.onresize = adjustFontSize;
         </script>
 
     <div class="info">
