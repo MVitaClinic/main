@@ -376,40 +376,22 @@
      
 <style>
     .blog-cover {
-        width: 100%; /* ปรับให้เต็มความกว้าง */
-        position: relative;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        overflow: hidden;
-        padding-bottom: 50%; /* อัตราส่วน 2:1 สำหรับภาพ */
-    }
-
-    .blog-cover img {
-        width: 100%; /* ปรับให้เต็มความกว้าง */
-        height: 100%; /* ใช้ความสูงเต็มของกรอบ */
-        object-fit: contain; /* ใช้ contain เพื่อให้ภาพไม่ถูกครอบ */
-        border-radius: inherit;
-    }
-
-    /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
-    @media (max-width: 1024px) {
-        .blog-cover {
-            padding-bottom: 50%; /* ยังคงใช้ 2:1 สำหรับภาพ */
+            width: 100%;
+            max-width: 500px; /* ขนาดสูงสุดของกรอบ */
+            margin: 0 auto; /* จัดให้อยู่กลางหน้า */
+            padding: 10px;
+            background-color: white;
+            border-radius: 15px; /* ขอบมน */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
+            overflow: hidden; /* ทำให้รูปไม่เกินกรอบ */
         }
-    }
 
-    @media (max-width: 768px) {
-        .blog-cover {
-            padding-bottom: 50%; /* ยังคงใช้ 2:1 สำหรับภาพ */
+        /* กำหนดให้รูปภาพมีขอบมนที่อิงตามกรอบ */
+        .blog-cover img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px; /* ขอบมนของรูปภาพ */
         }
-    }
-
-    @media (max-width: 480px) {
-        .blog-cover {
-            padding-bottom: 50%; /* ยังคงใช้ 2:1 สำหรับภาพ */
-        }
-    }
 </style>
 
 
