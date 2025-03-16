@@ -375,24 +375,54 @@
      </div>
      
 <style>
+    /* กรอบที่รองรับการแสดงผลในทุกขนาดหน้าจอ */
     .blog-cover {
-            width: 100%;
-            max-width: 500px; /* ขนาดสูงสุดของกรอบ */
-            margin: 0 auto; /* จัดให้อยู่กลางหน้า */
-            padding: 10px;
-            background-color: white;
-            border-radius: 15px; /* ขอบมน */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
-            overflow: hidden; /* ทำให้รูปไม่เกินกรอบ */
+        width: 100%;
+        max-width: 100%; /* ให้กรอบเต็มหน้าจอ */
+        margin: 0 auto; /* จัดให้อยู่กลางหน้า */
+        padding: 10px;
+        background-color: white;
+        border-radius: 15px; /* ขอบมน */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
+        overflow: hidden; /* ทำให้รูปไม่เกินกรอบ */
+    }
+
+    /* กำหนดให้รูปภาพยืดหยุ่นตามขนาดกรอบ */
+    .blog-cover img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px; /* ขอบมนของรูปภาพ */
+    }
+
+    /* สำหรับจอ PC ใหญ่ */
+    @media (min-width: 1024px) {
+        .blog-cover {
+            width: 100vw; /* ใช้ความกว้างของหน้าจอ */
+            height: 70vh; /* ความสูง 70% ของหน้าจอ */
         }
 
-        /* กำหนดให้รูปภาพมีขอบมนที่อิงตามกรอบ */
+        .blog-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ปรับให้รูปภาพพอดีกับกรอบ */
+        }
+    }
+
+    /* สำหรับมือถือและแท็บเล็ต */
+    @media (max-width: 1024px) {
+        .blog-cover {
+            width: 100%; /* ขยายให้เต็มหน้าจอ */
+            max-width: 100%;
+            height: auto; /* ให้รูปภาพยืดหยุ่นในแนวสูง */
+        }
+
         .blog-cover img {
             width: 100%;
             height: auto;
-            border-radius: 15px; /* ขอบมนของรูปภาพ */
         }
+    }
 </style>
+
 
 
     <h1>รักษาสิว ราคา ถูกและดี เห็นผลจริง!<br> [อัปเดต 2025]</h1>
