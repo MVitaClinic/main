@@ -377,12 +377,12 @@
     <style>
         .blog-cover {
             width: 100%; /* ปรับให้เต็มความกว้าง */
-            height: auto; /* ความสูงจะคำนวณจากอัตราส่วนของภาพ */
             position: relative;
             margin: 0 auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            padding-top: 56.25%; /* อัตราส่วน 16:9 (พอดีสำหรับภาพแนวนอน) */
         }
 
         .blog-cover img {
