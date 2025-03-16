@@ -369,7 +369,7 @@
         });
     </script>
      
- <div class="info">
+<div class="info">
     <div class="blog-cover">
         <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%A7%20%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2.jpg?raw=true" alt="รักษาสิว ราคา">
     </div>
@@ -377,37 +377,37 @@
     <style>
         .blog-cover {
             width: 100%; /* ปรับให้เต็มความกว้าง */
-            height: auto; /* ความสูงจะคำนวณจากอัตราส่วนของภาพ */
             position: relative;
             margin: 0 auto;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            padding-bottom: 56.25%; /* อัตราส่วน 16:9 สำหรับการแสดงผลภาพ */
         }
 
         .blog-cover img {
             width: 100%; /* ปรับให้เต็มความกว้าง */
-            height: auto; /* ความสูงอัตโนมัติ */
-            object-fit: cover;
+            height: 100%; /* ใช้ความสูงเต็มของกรอบ */
+            object-fit: cover; /* คงอัตราส่วนของภาพ */
             border-radius: inherit;
         }
 
         /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
         @media (max-width: 1024px) {
             .blog-cover {
-                height: 50vh; /* ลดขนาดตามความสูงหน้าจอ */
+                padding-bottom: 56.25%; /* ยังคงใช้ 16:9 สำหรับภาพ */
             }
         }
 
         @media (max-width: 768px) {
             .blog-cover {
-                height: 40vh; /* ลดขนาดลงสำหรับ iPad */
+                padding-bottom: 56.25%; /* ยังคงใช้ 16:9 สำหรับภาพ */
             }
         }
 
         @media (max-width: 480px) {
             .blog-cover {
-                height: 35vh; /* ลดขนาดลงสำหรับมือถือ */
+                padding-bottom: 56.25%; /* ยังคงใช้ 16:9 สำหรับภาพ */
             }
         }
     </style>
