@@ -438,40 +438,50 @@
 
     <style>
         .image-container {
-            width: 100%; /* ปรับให้เต็มความกว้าง */
-            height: auto; /* ความสูงจะคำนวณจากอัตราส่วนของภาพ */
-            position: relative;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
+        width: 80%;
+        max-width: 80%; /* ให้กรอบเต็มหน้าจอ */
+        margin: 0 auto; /* จัดให้อยู่กลางหน้า */
+        padding: 10px;
+        background-color: white;
+        border-radius: 15px; /* ขอบมน */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงา */
+        overflow: hidden; /* ทำให้รูปไม่เกินกรอบ */
+    }
+
+    /* กำหนดให้รูปภาพยืดหยุ่นตามขนาดกรอบ */
+    .image-container img {
+        width: 80%;
+        height: auto;
+        border-radius: 15px; /* ขอบมนของรูปภาพ */
+    }
+
+    /* สำหรับจอ PC ใหญ่ */
+    @media (min-width: 1024px) {
+        .image-container {
+            width: 80%;
+            height: 80%;
         }
 
         .image-container img {
-            width: 100%; /* ปรับให้เต็มความกว้าง */
-            height: auto; /* ความสูงอัตโนมัติ */
-            object-fit: cover;
-            border-radius: inherit;
+            width: 80%;
+            height: 80%;
+            object-fit: cover; /* ปรับให้รูปภาพพอดีกับกรอบ */
+        }
+    }
+
+    /* สำหรับมือถือและแท็บเล็ต */
+    @media (max-width: 1024px) {
+        .image-container {
+            width: 80%; /* ขยายให้เต็มหน้าจอ */
+            max-width: 80%;
+            height: auto; /* ให้รูปภาพยืดหยุ่นในแนวสูง */
         }
 
-        /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
-        @media (max-width: 1024px) {
-            .image-container {
-                height: 50vh; /* ลดขนาดตามความสูงหน้าจอ */
-            }
+        .image-container img {
+            width: 80%;
+            height: auto;
         }
-
-        @media (max-width: 768px) {
-            .image-container {
-                height: 40vh; /* ลดขนาดลงสำหรับ iPad */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .image-container {
-                height: 35vh; /* ลดขนาดลงสำหรับมือถือ */
-            }
-        }
+    }
     </style>
 </div>
 
