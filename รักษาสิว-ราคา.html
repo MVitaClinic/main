@@ -369,49 +369,43 @@
         });
     </script>
      
-<div class="info">
-    <div class="blog-cover">
-        <img src="https://github.com/MVitaClinic/main/blob/main/%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%A7%20%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2.jpg?raw=true" alt="รักษาสิว ราคา">
-    </div>
+<style>
+    .image-container {
+        width: 100%; /* ปรับให้เต็มความกว้าง */
+        position: relative;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        padding-bottom: 50%; /* อัตราส่วน 2:1 สำหรับภาพ */
+    }
 
-    <style>
-        .blog-cover {
-            width: 100%; /* ปรับให้เต็มความกว้าง */
-            position: relative;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            padding-bottom: 56.25%; /* อัตราส่วน 16:9 สำหรับการแสดงผลภาพ */
-        }
+    .image-container img {
+        width: 100%; /* ปรับให้เต็มความกว้าง */
+        height: 100%; /* ใช้ความสูงเต็มของกรอบ */
+        object-fit: contain; /* ใช้ contain เพื่อให้ภาพไม่ถูกครอบ */
+        border-radius: inherit;
+    }
 
-        .blog-cover img {
-            width: 100%; /* ปรับให้เต็มความกว้าง */
-            height: 100%; /* ใช้ความสูงเต็มของกรอบ */
-            object-fit: cover; /* คงอัตราส่วนของภาพ */
-            border-radius: inherit;
+    /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
+    @media (max-width: 1024px) {
+        .image-container {
+            padding-bottom: 50%; /* ยังคงใช้ 2:1 สำหรับภาพ */
         }
+    }
 
-        /* ปรับขนาดสำหรับหน้าจอที่เล็กลง */
-        @media (max-width: 1024px) {
-            .blog-cover {
-                padding-bottom: 56.25%; /* ยังคงใช้ 16:9 สำหรับภาพ */
-            }
+    @media (max-width: 768px) {
+        .image-container {
+            padding-bottom: 50%; /* ยังคงใช้ 2:1 สำหรับภาพ */
         }
+    }
 
-        @media (max-width: 768px) {
-            .blog-cover {
-                padding-bottom: 56.25%; /* ยังคงใช้ 16:9 สำหรับภาพ */
-            }
+    @media (max-width: 480px) {
+        .image-container {
+            padding-bottom: 50%; /* ยังคงใช้ 2:1 สำหรับภาพ */
         }
-
-        @media (max-width: 480px) {
-            .blog-cover {
-                padding-bottom: 56.25%; /* ยังคงใช้ 16:9 สำหรับภาพ */
-            }
-        }
-    </style>
-</div>
+    }
+</style>
 
 
     <h1>รักษาสิว ราคา ถูกและดี เห็นผลจริง!<br> [อัปเดต 2025]</h1>
