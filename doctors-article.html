@@ -365,16 +365,9 @@
     color: #333;
 }
 
-/* Mobile responsiveness: Keep 3 columns, just make them smaller */
 @media screen and (max-width: 768px) {
     .column {
-        flex: 1 1 30%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .column {
-        flex: 1 1 100%; /* Ensure that each column still takes 100% width on smaller screens */
+        flex: 1 1 100%; /* Make each column take 100% width on smaller screens */
     }
 }
     </style>
