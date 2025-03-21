@@ -155,77 +155,158 @@
     }
         }
 
+     .hamburger {
+        position: fixed;
+        top: 85px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 2px solid #A67C00;
+        border-radius: 10px;
+        padding: 8px;
+        cursor: pointer;
+        z-index: 995;
+        transition: transform 0.3s ease;
+    }
+
+    .hamburger.active {
+        transform: rotate(90deg);
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 4px;
+        background-color: #A67C00;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+
+    .menu {
+        display: none;
+        position: fixed;
+        top: 85px;
+        left: 20px;
+        background-color: white;
+        border: 2px solid #A67C00;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 997;
+    }
+
+    .menu.show {
+        display: block;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px;
+        color: #A67C00;
+        text-decoration: none;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .menu a:hover {
+        background-color: #A67C00;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-item {
+        position: relative;
+    }
+
+    .menu-item > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .menu-item > a::after {
+        content: '\25B6'; /* Right arrow */
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background-color: white;
+        border: 1px solid #A67C00;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: max-content;
+        white-space: nowrap;
+    }
+
+    .menu-item.active > .submenu {
+        display: block;
+    }
+
+    .submenu a {
+        padding: 8px 12px;
+        color: #A67C00;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .submenu a:hover {
+        background-color: #f5f5f5;
+        color: #A67C00;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
         .hamburger {
-            position: fixed;
-            top: 85px;
+            top: 70px;
             left: 20px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.7);
-            border: 2px solid #A67C00;
-            border-radius: 5px;
-            padding: 5px;
-            cursor: pointer;
-            z-index: 995;
+            width: 45px;
+            height: 45px;
         }
-
-        .hamburger div {
-            width: 25px;
-            height: 4px;
-            background-color: #A67C00;
-            border-radius: 2px;
-            z-index: 996; 
-        }
-
-        /* Style for the menu links */
-        .menu {
-            display: none;
-            position: fixed;
-            top: 85px; /* เพิ่ม 10px จากตำแหน่งเดิม */
-            left: 20px;
-            background-color: white;
-            border: 2px solid #A67C00;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 997; 
-        }
-
-        .menu a {
-            display: block;
-            padding: 10px;
-            color: #A67C00;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-            z-index: 998; 
-        }
-
-        .menu a:hover {
-            background-color: #f5f5f5;
-            z-index: 999; 
-        }
-
-        /* Show menu when active */
-        .hamburger.active + .menu {
-            display: block;
-        }
-        
-     @media (max-width: 768px) {
-        .hamburger {
-                top: 70px;  /* ปรับตำแหน่งปุ่ม hamburger ให้อยู่ในตำแหน่งที่เหมาะสมสำหรับมือถือ */
-                left: 20px;
-                width: 35px; /* ขนาดปุ่มใหญ่ขึ้น */
-                height: 35px;
-            }
 
         .menu {
-                top: 70px; /* ปรับตำแหน่งของเมนูให้เหมาะสม */
-            }
+            top: 70px;
+            left: 10px;
+            width: 220px;
         }
+
+        .submenu {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .menu-item.active > .submenu {
+            display: block;
+        }
+
+        .menu-item > a::after {
+            content: '\25BC'; /* เปลี่ยนเป็นลูกศรลงสำหรับมือถือ */
+        }
+    }
         
     .background-container {
         position: fixed;
@@ -345,38 +426,70 @@
     
 <body>
     <header>เอ็มวีต้าคลินิก คลินิกรักษาสิว เลเซอร์รอยสิว</header>
-    
-    <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="menu">
-        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">Home</a>
-        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/doctors-article">บทความจากคุณหมอ</a>
-        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%A7-%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2">รักษาสิว ราคา</a>
-        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/clinic-%E0%B8%AA%E0%B8%B4%E0%B8%A7">Clinic สิว</a>
-        <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">Contact</a>
-    </div>
-     <script>
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const menu = document.querySelector('.menu');
-            hamburger.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
 
-        // ปิดเมนูเมื่อคลิกที่ส่วนอื่น
-        document.addEventListener('click', function(event) {
-            const hamburger = document.querySelector('.hamburger');
-            const menu = document.querySelector('.menu');
-            if (!hamburger.contains(event.target) && !menu.contains(event.target)) {
-                hamburger.classList.remove('active');
-                menu.classList.remove('active');
-            }
-        });
-    </script>
-  
+    <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<div class="menu">
+    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/">Home</a>
+    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/doctors-article">บทความจากคุณหมอ</a>
+    <div class="menu-item">
+        <a onclick="toggleSubmenu(this)">บริการ</a>
+        <div class="submenu">
+            <div class="menu-item">
+                <a onclick="toggleSubmenu(this)">รักษาสิว</a>
+                <div class="submenu">
+                    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/รักษาสิว-ราคา">รักษาสิว</a>
+                    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/เลเซอร์รักษาสิว">เลเซอร์รักษาสิว</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a onclick="toggleSubmenu(this)">Ultherapy</a>
+                <div class="submenu">
+                    <a href="#">ยกกระชับหน้า</a>
+                    <a href="#">ดูแลหลังทำ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AA%E0%B8%B4%E0%B8%A7-%E0%B8%A3%E0%B8%B2%E0%B8%84%E0%B8%B2">รักษาสิว ราคา</a>
+    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/clinic-%E0%B8%AA%E0%B8%B4%E0%B8%A7">Clinic สิว</a>
+    <a href="https://www.xn--12cf4cr1b0al0c8bwabf3l4d8a.com/Contact">Contact</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('show');
+        const hamburger = document.querySelector('.hamburger');
+        hamburger.classList.toggle('active');
+    }
+
+    function toggleSubmenu(element) {
+        const submenu = element.nextElementSibling; // เมนูย่อยที่อยู่ข้างๆ เมนูที่คลิก
+        
+        // สลับการแสดงผลของเมนูย่อยที่คลิก
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none'; // ถ้าเปิดอยู่แล้วให้ปิด
+        } else {
+            submenu.style.display = 'block'; // ถ้ายังปิดอยู่ให้เปิด
+        }
+    }
+
+    // ปิดเมนูเมื่อคลิกที่ส่วนอื่น
+    document.addEventListener('click', function(event) {
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+        if (!hamburger.contains(event.target) && !menu.contains(event.target)) {
+            menu.classList.remove('show');
+            hamburger.classList.remove('active');
+        }
+    });
+</script>
+
 <div class="container">
   <p style="color: #A67C00;">เพราะเราเข้าใจทุกปัญหาสิว รักษาอย่างตรงจุด</p>
   <h1 style="color: #A67C00;">คลินิกรักษาสิว ต้อง เอ็มวีต้าคลินิก</h1>
