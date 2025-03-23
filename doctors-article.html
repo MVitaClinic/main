@@ -327,63 +327,63 @@
             }
          }
 
-{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-               .container {
-             display: flex;
-             justify-content: center;
-             flex-wrap: wrap;
-             gap: 20px;
-             max-width: 1200px;
-             margin: auto;
-         }
- 
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
 
-        .column {
-            flex: 1 1 100%; /* ปรับขนาดให้เหมาะสม */
-            max-width: 400px;
-            text-align: center;
-            background: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+.column {
+    flex: 1 1 45%; /* ปรับขนาดคอลัมน์ให้ใหญ่ขึ้น */
+    max-width: 500px;  /* ปรับขนาดของคอลัมน์ให้ใหญ่ขึ้น */
+    text-align: center;
+    background: #fff;
+    padding: 20px;  /* เพิ่มระยะห่างภายใน */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
 
-        .column:hover {
-            transform: translateY(-5px);
-        }
+.column:hover {
+    transform: translateY(-5px);
+}
 
-        .column img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+.column img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 300px; /* ปรับขนาดภาพให้ไม่ใหญ่เกินไป */
+}
 
-        .column a {
-            text-decoration: none;
-            color: #A67C00;
-            display: block;
-            margin-top: 10px;
-        }
+.column a {
+    text-decoration: none;
+    color: #A67C00;
+    display: block;
+    margin-top: 10px;
+}
 
-        .column p {
-            font-size: 16px;
-            color: #A67C00;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+.column p {
+    font-size: 18px; /* ปรับขนาดฟอนต์ให้ใหญ่ขึ้น */
+    color: #A67C00;
+    margin-top: 10px;
+    font-weight: bold;
+}
 
-        @media screen and (max-width: 768px) {
-            .column {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-        }
+@media screen and (max-width: 768px) {
+    .column {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
     </style>
     
     <meta name="google-site-verification" content="rlrkELj6TIxc--an3Ars4vtrBisf7G-9aiujA47k_DE" />
