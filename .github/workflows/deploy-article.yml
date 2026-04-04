@@ -27,7 +27,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions Automator"
           git config --global user.email "actions@github.com"
-          git add accure-laser-treatment.html
+          git add .
           # Commit only if there are changes
           git diff-index --quiet HEAD || git commit -m "Auto-Update: Regenerate Accure Laser SEO Article"
           git push origin main

@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const http = require('https');
 
@@ -78,25 +79,30 @@ req.write(postData);
 req.end();
 
 function assemblePage(articleText) {
-    // 1. Get random 3 images from bank
+    // 1. Generate unique identifier for this run
+    const timestamp = Date.now();
+    const newFileName = `accure-laser-treatment-${timestamp}.html`;
+    const newFileTitle = `รักษาสิว เลเซอร์สิว (Accure Laser) อัพเดท ${new Date().toLocaleString('th-TH')}`;
+
+    // 2. Get random 3 images from bank
     const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpg'));
     
     // Shuffle and pick 3
     const shuffled = imageFiles.sort(() => 0.5 - Math.random());
     const selectedImages = shuffled.slice(0, 3).map(img => `images/${img}`);
     
-    // 2. Read template (index.html)
-    const indexHtml = fs.readFileSync('./index.html', 'utf8');
+    // 3. Read template (index.html)
+    let indexHtml = fs.readFileSync('./index.html', 'utf8');
     const containerIndex = indexHtml.indexOf('<div class="container">');
     const footerIndex = indexHtml.indexOf('<div class="footer">');
 
-    const topPart = indexHtml.substring(0, containerIndex).replace(/<title>.*<\/title>/, '<title>Accure laser รักษาสิว นวัตกรรมใหม่ที่ดีที่สุด</title>');
+    const topPart = indexHtml.substring(0, containerIndex).replace(/<title>.*<\/title>/, `<title>${newFileTitle}</title>`);
     const bottomPart = indexHtml.substring(footerIndex);
 
-    // 3. Construct Body
+    // 4. Construct Content Body
     const mainBody = `
 <div class="container" style="background: rgba(255, 255, 255, 0.9); border-radius: 10px; padding: 40px; margin-top: 20px;">
-    <h1 style="color: #A67C00;">นวัตกรรม Accure laser สำหรับ รักษาสิว ที่ เอ็มวีต้าคลินิก (อัพเดทล่าสุด)</h1>
+    <h1 style="color: #A67C00;">นวัตกรรม Accure laser สำหรับ รักษาสิว ที่ เอ็มวีต้าคลินิก</h1>
     
     <div style="text-align: center; margin: 30px 0;">
         <img src="${selectedImages[0]}" alt="การดูแลสิวด้วยเทคนิคทันสมัย" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
@@ -125,6 +131,19 @@ function assemblePage(articleText) {
 `;
 
     const fullHtml = topPart + mainBody + bottomPart;
-    fs.writeFileSync('./accure-laser-treatment.html', fullHtml);
-    console.log("Finished assembling accure-laser-treatment.html with new AI content and images.");
+    fs.writeFileSync(`./${newFileName}`, fullHtml);
+    console.log(`Successfully saved new article as ${newFileName}`);
+
+    // 5. Append New Link to index.html
+    const linkAnchor = '<h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้า คลินิก</h2>';
+    const newLinkHtml = `\n        <p><strong>บทความอัพเดทใหม่:</strong> <a href="${newFileName}" style="color: #A67C00; text-decoration: underline;">${newFileTitle}</a></p>`;
+    
+    // Inject right after the <h2>...</h2>
+    if (indexHtml.includes(linkAnchor)) {
+        indexHtml = indexHtml.replace(linkAnchor, linkAnchor + newLinkHtml);
+        fs.writeFileSync('./index.html', indexHtml);
+        console.log("Successfully appended new article link to index.html");
+    } else {
+        console.error("Warning: Could not find anchor tag in index.html to insert the link.");
+    }
 }
