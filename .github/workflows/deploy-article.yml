@@ -1,0 +1,33 @@
+name: Automate SEO Article Generation EVERY 2 HOURS
+
+on:
+  schedule:
+    - cron: '0 */2 * * *' # Runs exactly every 2 hours
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run Auto-Gen Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node auto-gen.js
+        
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions Automator"
+          git config --global user.email "actions@github.com"
+          git add accure-laser-treatment.html
+          # Commit only if there are changes
+          git diff-index --quiet HEAD || git commit -m "Auto-Update: Regenerate Accure Laser SEO Article"
+          git push origin main
