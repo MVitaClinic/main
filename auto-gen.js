@@ -34,7 +34,7 @@ const postData = JSON.stringify({
 
 const options = {
     hostname: 'generativelanguage.googleapis.com',
-    path: `/v1beta/models/gemini-3-flash-preview:generateContent?key=${API_KEY}`,
+    path: `/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${API_KEY}`,
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
