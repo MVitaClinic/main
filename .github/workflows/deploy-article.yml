@@ -25,7 +25,9 @@ jobs:
       - name: Run Auto-Gen Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node auto-gen.js
+        run: |
+          git pull origin main || true
+          node auto-gen.js
         
       - name: Commit and Push Changes
         run: |
