@@ -32,4 +32,5 @@ jobs:
           git add .
           # Commit only if there are changes
           git diff-index --quiet HEAD || git commit -m "Auto-Update: Regenerate Accure Laser SEO Article"
+          git pull --rebase origin main
           git push origin main
