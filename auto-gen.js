@@ -85,7 +85,7 @@ function assemblePage(articleText) {
     const newFileTitle = `รักษาสิว เลเซอร์สิว (Accure Laser) อัพเดท ${new Date().toLocaleString('th-TH')}`;
 
     // 2. Get random 3 images from bank
-    const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpg'));
+    const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpeg'));
     
     // Shuffle and pick 3
     const shuffled = imageFiles.sort(() => 0.5 - Math.random());
