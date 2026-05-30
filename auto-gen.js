@@ -79,13 +79,32 @@ req.write(postData);
 req.end();
 
 function assemblePage(articleText) {
-    // 1. Generate unique identifier for this run
-    const timestamp = Date.now();
-    const newFileName = `accure-laser-treatment-${timestamp}.html`;
-    const newFileTitle = `รักษาสิว เลเซอร์สิว (Accure Laser) อัพเดท ${new Date().toLocaleString('th-TH')}`;
+    // Extract title from the article
+    const headerRegex = /<(h[12])[^>]*>([\s\S]*?)<\/h[12]>/i;
+    const match = articleText.match(headerRegex);
+
+    let articleTitle = "";
+    let cleanedArticleText = articleText;
+
+    if (match) {
+        articleTitle = match[2].replace(/<[^>]+>/g, '').trim();
+        cleanedArticleText = articleText.replace(headerRegex, '').trim();
+    } else {
+        articleTitle = "นวัตกรรม Accure laser สำหรับ รักษาสิว ที่ เอ็มวีต้าคลินิก";
+    }
+
+    // 1. Generate filename and title related to the article without date
+    const slug = articleTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9\u0e00-\u0e7f]+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '') || `accure-laser-treatment-${Date.now()}`;
+        
+    const newFileName = `${slug}.html`;
+    const newFileTitle = articleTitle;
 
     // 2. Get random 3 images from bank
-    const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpeg'));
+    const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpg') || f.endsWith('.jpeg'));
     
     // Shuffle and pick 3
     const shuffled = imageFiles.sort(() => 0.5 - Math.random());
@@ -102,14 +121,14 @@ function assemblePage(articleText) {
     // 4. Construct Content Body
     const mainBody = `
 <div class="container" style="background: rgba(255, 255, 255, 0.9); border-radius: 10px; padding: 40px; margin-top: 20px;">
-    <h1 style="color: #A67C00;">นวัตกรรม Accure laser สำหรับ รักษาสิว ที่ เอ็มวีต้าคลินิก</h1>
+    <h1 style="color: #A67C00;">${articleTitle}</h1>
     
     <div style="text-align: center; margin: 30px 0;">
         <img src="${selectedImages[0]}" alt="การดูแลสิวด้วยเทคนิคทันสมัย" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
     </div>
 
     <div style="text-align: left; color: #333; line-height: 1.6; font-size: 18px;">
-        ${articleText.substring(0, Math.floor(articleText.length / 2))}
+        ${cleanedArticleText.substring(0, Math.floor(cleanedArticleText.length / 2))}
     </div>
 
     <div style="text-align: center; margin: 30px 0;">
@@ -117,7 +136,7 @@ function assemblePage(articleText) {
     </div>
 
     <div style="text-align: left; color: #333; line-height: 1.6; font-size: 18px;">
-        ${articleText.substring(Math.floor(articleText.length / 2))}
+        ${cleanedArticleText.substring(Math.floor(cleanedArticleText.length / 2))}
     </div>
 
     <div style="text-align: center; margin: 30px 0;">
