@@ -11,8 +11,9 @@ if (!API_KEY) {
 }
 
 const promptText = `
-เขียนบทความภาษาไทยขึ้นมาใหม่ให้ไม่เหมือนบทความใดๆแบบสุ่ม ความยาวประมาณ 555 คำ โดยบทความจะต้องมีเกี่ยวข้องกับการรักษาสิวด้วย "Accure laser" ที่ "เอ็มวีต้าคลินิก" (คลินิกรักษาสิว)
-ต้องมี Keywords ต่อไปนี้ปะปนแบบสุ่มอยู่ในบทความ: คลินิกรักษาสิว, รักษาสิว, เลเซอร์สิว, หลุมสิว, รอยสิว, สิว, รอยดำรอยแดง, Accure laser
+เขียนบทความภาษาไทยขึ้นมาใหม่ให้ไม่เหมือนบทความใดๆแบบสุ่ม ความยาวประมาณ 639 คำ โดยบทความจะเป็นการพูดถึงคำนิยมของลูกค้าที่ตั้งใจเดินทางมาเข้ารับบริการ ที่ "เอ็มวีต้าคลินิก" (คลินิกรักษาสิว)
+โดยบทความจะทำการสุ่มเลือก 1 โลเคชั่น จากทำเลต่อไปนี้ อโศก, พร้อมพงษ์, ทองหล่อ, เอกมัย, นานา, ชิดลม, เพลินจิต, สยาม, ประตูน้ำ, บรรทัดทอง, สามย่าน, พระราม 9, รัชดา (รัชดาภิเษก), ห้วยขวาง, ดินแดง
+และ ระบุอยู่ในชื่อบทความและเนื้อหาด้วย โดยที่ชื่อบทความจะต้องเป็นไปตามเทรนด์,กระแสหรือเหตุการณ์ในประเทศไทยของวันที่เขียน และ ไม่ซ้ำ, ผนวกกับมุมมองที่แตกต่างไม่ค่อยมีใครพูดถึง รวมทั้งบทความนี้ต้องมี Keywords ต่อไปนี้ปะปนแบบสุ่มอยู่ในบทความ: คลินิกรักษาสิว, รักษาสิว, เลเซอร์สิว, หลุมสิว, รอยสิว, สิว, รอยดำรอยแดง, Accure laser
 
 ข้อห้ามเด็ดขาด (สำคัญมาก!):
 1. ห้ามใช้คำว่า "ยา" 
@@ -90,7 +91,7 @@ function assemblePage(articleText) {
         articleTitle = match[2].replace(/<[^>]+>/g, '').trim();
         cleanedArticleText = articleText.replace(headerRegex, '').trim();
     } else {
-        articleTitle = "นวัตกรรม Accure laser สำหรับ รักษาสิว ที่ เอ็มวีต้าคลินิก";
+        articleTitle = "เอ็มวีต้าคลินิก คลินิกรักษาสิว";
     }
 
     // 1. Generate filename and title related to the article without date
@@ -124,7 +125,7 @@ function assemblePage(articleText) {
     <h1 style="color: #A67C00;">${articleTitle}</h1>
     
     <div style="text-align: center; margin: 30px 0;">
-        <img src="${selectedImages[0]}" alt="การดูแลสิวด้วยเทคนิคทันสมัย" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <img src="${selectedImages[0]}" alt="การดูแลรักษาสิวด้วยเทคนิคทันสมัย" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
     </div>
 
     <div style="text-align: left; color: #333; line-height: 1.6; font-size: 18px;">
@@ -140,7 +141,7 @@ function assemblePage(articleText) {
     </div>
 
     <div style="text-align: center; margin: 30px 0;">
-        <img src="${selectedImages[2]}" alt="แพทย์เชี่ยวชาญด้านผิวพรรณ" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <img src="${selectedImages[2]}" alt="หมอรักษาสิว" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
     </div>
     
     <div style="margin-top: 40px; text-align: center;">
@@ -154,7 +155,7 @@ function assemblePage(articleText) {
     console.log(`Successfully saved new article as ${newFileName}`);
 
     // 5. Append New Link to index.html
-    const linkAnchor = '<h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้า คลินิก</h2>';
+    const linkAnchor = '<h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้าคลินิก</h2>';
     const newLinkHtml = `\n        <p><strong>บทความอัพเดทใหม่:</strong> <a href="${newFileName}" style="color: #A67C00; text-decoration: underline;">${newFileTitle}</a></p>`;
     
     // Inject right after the <h2>...</h2>
