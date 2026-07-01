@@ -158,7 +158,7 @@ function assemblePage(articleText) {
     console.log(`Successfully saved new article as ${newFileName}`);
 
     // 5. Append New Link to index.html
-    const linkAnchor = '<h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้าคลินิก</h2>';
+    const linkAnchor = '<h2>เพิ่มเติมเกี่ยวกับ เอ็มวีต้า คลินิก</h2>';
     const newLinkHtml = `\n        <p><strong>บทความอัพเดทใหม่:</strong> <a href="${newFileName}" style="color: #A67C00; text-decoration: underline;">${newFileTitle}</a></p>`;
     
     // Inject right after the <h2>...</h2>
