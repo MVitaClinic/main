@@ -99,8 +99,9 @@ function assemblePage(articleText) {
         .toLowerCase()
         .replace(/[^a-z0-9\u0e00-\u0e7f]+/g, '-')
         .replace(/-+/g, '-')
-        .replace(/^-+|-+$/g, '') || `accure-laser-treatment-${Date.now()}`;
-        
+        .replace(/^-+|-+$/g, '') || `คลินิกรักษาสิวใกล้ฉัน-${Date.now()}`;
+    
+    const shortSlug = slug.substring(0, 36).replace(/-$/, '');
     const newFileName = `${slug}.html`;
     const newFileTitle = articleTitle;
 
