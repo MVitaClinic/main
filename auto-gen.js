@@ -101,7 +101,11 @@ function assemblePage(articleText) {
         .replace(/-+/g, '-')
         .replace(/^-+|-+$/g, '') || `คลินิกรักษาสิวใกล้ฉัน-${Date.now()}`;
     
-    const shortSlug = slug.substring(0, 14).replace(/-$/, '');
+    slug = slug.substring(0, 35).replace(/-+$/, '');
+    
+    // Fallback if slug becomes empty
+    if (!slug) slug = `article-${Date.now()}`;
+        
     const newFileName = `${slug}.html`;
     const newFileTitle = articleTitle;
 
