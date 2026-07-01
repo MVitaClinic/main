@@ -108,7 +108,7 @@ function assemblePage(articleText) {
     const newFileTitle = articleTitle;
 
     // 2. Get random 3 images from bank
-    const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpg') || f.endsWith('.jpeg'));
+    const imageFiles = fs.readdirSync('./images').filter(f => f.endsWith('.png') || f.endsWith('.jpg') || f.endsWith('.jpeg')|| f.endsWith('.JPG')|| f.endsWith('.webp'));
     
     // Shuffle and pick 3
     const shuffled = imageFiles.sort(() => 0.5 - Math.random());
