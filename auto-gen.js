@@ -94,19 +94,17 @@ function assemblePage(articleText) {
         articleTitle = "เอ็มวีต้าคลินิก คลินิกรักษาสิว";
     }
 
-    // 1. Generate filename and title related to the article without date
+// 1. Generate filename and title related to the article without date
     const slug = articleTitle
         .toLowerCase()
         .replace(/[^a-z0-9\u0e00-\u0e7f]+/g, '-')
         .replace(/-+/g, '-')
-        .replace(/^-+|-+$/g, '') || `คลินิกรักษาสิวใกล้ฉัน-${Date.now()}`;
-    
-    slug = slug.substring(0, 35).replace(/-+$/, '');
-    
-    // Fallback if slug becomes empty
-    if (!slug) slug = `article-${Date.now()}`;
+        .replace(/^-+|-+$/g, '') || `accure-laser-treatment-${Date.now()}`;
         
-    const newFileName = `${slug}.html`;
+    // Truncate the slug to 36 characters and remove any trailing dash
+    const shortSlug = slug.substring(0, 36).replace(/-$/, '');
+    const newFileName = `${shortSlug}.html`;
+        
     const newFileTitle = articleTitle;
 
     // 2. Get random 3 images from bank
